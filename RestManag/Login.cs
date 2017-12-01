@@ -39,31 +39,34 @@ namespace RestManag
         {
            
              con = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=Rest;Integrated Security=True;Pooling=False");
-             cmd = new SqlCommand("Select * FROM Rest where ISAdmin=0",con);
+             cmd = new SqlCommand("Select Count(*) FROM Rest where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and ISAdmin=1",con);
              da1 = new SqlDataAdapter(cmd);
              dt1 = new DataTable();
              da1.Fill(dt1);
 
-            da = new SqlDataAdapter("Select Count(*) FROM Rest where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'",con);
+            da = new SqlDataAdapter("Select Count(*) FROM Rest where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and ISAdmin=0",con);
             dt = new DataTable();
             da.Fill(dt);
            
             if (dt.Rows[0][0].ToString() == "1")
-            { /*if(da1.Equals(false)){
-                this.Hide();*/
+            { 
                 Waiter w = new Waiter(); // This is bad
                 w.Show();
-                /*}else{
-                    this.Hide();
-                    Admin a = new Admin();
-                    a.Show();
-
-                  }*/
+                
             }
-            else
+            else if(dt1.Rows[0][0].ToString()== "1"){
+                this.Hide();
+                Admin a = new Admin();
+                a.Show();
+            }else
             {
                 MessageBox.Show("please check you username and password");
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

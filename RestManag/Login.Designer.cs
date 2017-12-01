@@ -79,6 +79,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(187, 203);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(131, 20);
             this.textBox2.TabIndex = 4;
             // 
@@ -105,6 +106,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Login";
             this.Text = "Login Window";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
