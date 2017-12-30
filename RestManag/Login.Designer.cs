@@ -28,98 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.Username = new System.Windows.Forms.Label();
-            this.Pass = new System.Windows.Forms.Label();
+            this.usersTableAdapter1 = new RestManag.RestDatabaseDataSetTableAdapters.UsersTableAdapter();
+            this.usernamel = new System.Windows.Forms.Label();
+            this.passwordl = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.clearbutton = new System.Windows.Forms.Button();
+            this.Loginbutton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Exitbutton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // usersTableAdapter1
             // 
-            this.button1.Location = new System.Drawing.Point(172, 276);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(164, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Log in";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.usersTableAdapter1.ClearBeforeFill = true;
             // 
-            // Username
+            // usernamel
             // 
-            this.Username.AutoSize = true;
-            this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username.Location = new System.Drawing.Point(57, 136);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(105, 24);
-            this.Username.TabIndex = 1;
-            this.Username.Text = "Username";
-            this.Username.Click += new System.EventHandler(this.label1_Click);
+            this.usernamel.AutoSize = true;
+            this.usernamel.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernamel.Location = new System.Drawing.Point(44, 62);
+            this.usernamel.Name = "usernamel";
+            this.usernamel.Size = new System.Drawing.Size(82, 18);
+            this.usernamel.TabIndex = 1;
+            this.usernamel.Text = "Username";
             // 
-            // Pass
+            // passwordl
             // 
-            this.Pass.AutoSize = true;
-            this.Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass.Location = new System.Drawing.Point(57, 198);
-            this.Pass.Name = "Pass";
-            this.Pass.Size = new System.Drawing.Size(100, 24);
-            this.Pass.TabIndex = 2;
-            this.Pass.Text = "Password";
+            this.passwordl.AutoSize = true;
+            this.passwordl.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordl.Location = new System.Drawing.Point(43, 94);
+            this.passwordl.Name = "passwordl";
+            this.passwordl.Size = new System.Drawing.Size(81, 18);
+            this.passwordl.TabIndex = 2;
+            this.passwordl.Text = "Password";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 141);
+            this.textBox1.Location = new System.Drawing.Point(171, 60);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
+            this.textBox1.Size = new System.Drawing.Size(167, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(187, 203);
+            this.textBox2.Location = new System.Drawing.Point(171, 97);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
+            this.textBox2.Size = new System.Drawing.Size(167, 20);
             this.textBox2.TabIndex = 4;
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 33);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Restaurant Management";
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::RestManag.Properties.Resources._3BE0800188BB83BD4D39F91CDC0115933667C30FC0333D8E5D_pimgpsh_fullsize_distr;
+            this.pictureBox1.Location = new System.Drawing.Point(144, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 20);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // clearbutton
+            // 
+            this.clearbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.clearbutton.Image = global::RestManag.Properties.Resources._776022FAF85955B3DCA4CF1E576C106697D03916556D9FE294_pimgpsh_fullsize_distr;
+            this.clearbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clearbutton.Location = new System.Drawing.Point(171, 165);
+            this.clearbutton.Name = "clearbutton";
+            this.clearbutton.Size = new System.Drawing.Size(75, 27);
+            this.clearbutton.TabIndex = 5;
+            this.clearbutton.Text = "  Clear";
+            this.clearbutton.UseVisualStyleBackColor = true;
+            // 
+            // Loginbutton
+            // 
+            this.Loginbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Loginbutton.Image = global::RestManag.Properties.Resources._E2044651974571362A01E7FB777DE9A7886909B0A98A6D6AB2_pimgpsh_fullsize_distr;
+            this.Loginbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Loginbutton.Location = new System.Drawing.Point(258, 165);
+            this.Loginbutton.Name = "Loginbutton";
+            this.Loginbutton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Loginbutton.Size = new System.Drawing.Size(80, 27);
+            this.Loginbutton.TabIndex = 0;
+            this.Loginbutton.Text = "  Log in";
+            this.Loginbutton.UseVisualStyleBackColor = true;
+            this.Loginbutton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::RestManag.Properties.Resources._2B601CF12D3B1EC04D7B52FC07D06490A340B45C85BB83F735_pimgpsh_fullsize_distr1;
+            this.pictureBox2.Location = new System.Drawing.Point(144, 97);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Exitbutton
+            // 
+            this.Exitbutton.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbutton.Location = new System.Drawing.Point(519, 429);
+            this.Exitbutton.Name = "Exitbutton";
+            this.Exitbutton.Size = new System.Drawing.Size(75, 36);
+            this.Exitbutton.TabIndex = 8;
+            this.Exitbutton.Text = "Exit";
+            this.Exitbutton.UseVisualStyleBackColor = true;
+            this.Exitbutton.Click += new System.EventHandler(this.Exitbutton_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 439);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = global::RestManag.Properties.Resources.original_014_matteo_rizzo_funghi_porcini_timo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(606, 466);
+            this.Controls.Add(this.Exitbutton);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.clearbutton);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Pass);
-            this.Controls.Add(this.Username);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.passwordl);
+            this.Controls.Add(this.usernamel);
+            this.Controls.Add(this.Loginbutton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Text = "Login Window";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label Username;
-        private System.Windows.Forms.Label Pass;
+        private RestDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        private System.Windows.Forms.Button Loginbutton;
+        private System.Windows.Forms.Label usernamel;
+        private System.Windows.Forms.Label passwordl;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button clearbutton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button Exitbutton;
     }
 }
 

@@ -16,9 +16,10 @@ namespace RestManag
         public Admin()
         {
             InitializeComponent();
-           
+            String month = dateTimePicker1.Value.ToString("MMMM");
+            String year = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             
-           
+            Monthla.Text = month.ToString()+" "+year.ToString();
             
 
         }
@@ -29,7 +30,10 @@ namespace RestManag
         public void setDays()
         {
             //TODO
-           
+            int day = dateTimePicker1.Value.Day;
+            int nextday = day + 1;
+            SavvatoLabel.Text = day.ToString();
+            Kiriakilebel.Text = nextday.ToString();
            
 
         
@@ -48,12 +52,8 @@ namespace RestManag
             
         }
 
-        private void logoutbutton_Click(object sender, EventArgs e)
-        {
-            Login l = new Login();
-            l.Show();
-            this.Hide();
 
-        }
+
+
     }
 }

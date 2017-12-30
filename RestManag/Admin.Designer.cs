@@ -28,428 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.managmentstaff = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Month = new System.Windows.Forms.TableLayoutPanel();
-            this.Monthla = new System.Windows.Forms.Label();
-            this.table = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DeuteraLabel = new System.Windows.Forms.Label();
-            this.TrithLabel = new System.Windows.Forms.Label();
-            this.TetarthLabel = new System.Windows.Forms.Label();
-            this.PemthLabel = new System.Windows.Forms.Label();
-            this.ParaskeuhLabel = new System.Windows.Forms.Label();
-            this.SavvatoLabel = new System.Windows.Forms.Label();
-            this.Kiriakilebel = new System.Windows.Forms.Label();
-            this.singlepayment = new System.Windows.Forms.TabPage();
-            this.totalpayment = new System.Windows.Forms.TabPage();
-            this.Addstaff = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.managmentstaff.SuspendLayout();
-            this.Month.SuspendLayout();
-            this.table.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
+            this.restDatabaseDataSet1 = new RestManag.RestDatabaseDataSet();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.programtab = new System.Windows.Forms.TabControl();
+            this.programt = new System.Windows.Forms.TabPage();
+            this.payrollt = new System.Windows.Forms.TabPage();
+            this.orderst = new System.Windows.Forms.TabPage();
+            this.totalt = new System.Windows.Forms.TabPage();
+            this.logoutbutton = new System.Windows.Forms.Button();
+            this.tablest = new System.Windows.Forms.TabPage();
+            this.paymentt = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.restDatabaseDataSet1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.programtab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // restDatabaseDataSet1
             // 
-            this.tabControl1.Controls.Add(this.managmentstaff);
-            this.tabControl1.Controls.Add(this.singlepayment);
-            this.tabControl1.Controls.Add(this.totalpayment);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(734, 425);
-            this.tabControl1.TabIndex = 0;
+            this.restDatabaseDataSet1.DataSetName = "RestDatabaseDataSet";
+            this.restDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // managmentstaff
+            // panel1
             // 
-            this.managmentstaff.Controls.Add(this.dateTimePicker1);
-            this.managmentstaff.Controls.Add(this.Month);
-            this.managmentstaff.Controls.Add(this.table);
-            this.managmentstaff.Controls.Add(this.Addstaff);
-            this.managmentstaff.Location = new System.Drawing.Point(4, 22);
-            this.managmentstaff.Name = "managmentstaff";
-            this.managmentstaff.Padding = new System.Windows.Forms.Padding(3);
-            this.managmentstaff.Size = new System.Drawing.Size(726, 399);
-            this.managmentstaff.TabIndex = 0;
-            this.managmentstaff.Text = "Managment Staff";
-            this.managmentstaff.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.programtab);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(893, 446);
+            this.panel1.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // programtab
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(-51, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Visible = false;
+            this.programtab.Controls.Add(this.programt);
+            this.programtab.Controls.Add(this.payrollt);
+            this.programtab.Controls.Add(this.orderst);
+            this.programtab.Controls.Add(this.paymentt);
+            this.programtab.Controls.Add(this.totalt);
+            this.programtab.Controls.Add(this.tablest);
+            this.programtab.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.programtab.ImageList = this.imageList1;
+            this.programtab.Location = new System.Drawing.Point(0, 4);
+            this.programtab.Name = "programtab";
+            this.programtab.SelectedIndex = 0;
+            this.programtab.Size = new System.Drawing.Size(893, 442);
+            this.programtab.TabIndex = 0;
             // 
-            // Month
+            // programt
             // 
-            this.Month.ColumnCount = 1;
-            this.Month.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Month.Controls.Add(this.Monthla, 0, 0);
-            this.Month.Location = new System.Drawing.Point(116, 23);
-            this.Month.Name = "Month";
-            this.Month.RowCount = 1;
-            this.Month.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Month.Size = new System.Drawing.Size(484, 42);
-            this.Month.TabIndex = 1;
+            this.programt.ImageIndex = 0;
+            this.programt.Location = new System.Drawing.Point(4, 31);
+            this.programt.Name = "programt";
+            this.programt.Padding = new System.Windows.Forms.Padding(3);
+            this.programt.Size = new System.Drawing.Size(885, 407);
+            this.programt.TabIndex = 0;
+            this.programt.Text = "Program";
+            this.programt.UseVisualStyleBackColor = true;
             // 
-            // Monthla
+            // payrollt
             // 
-            this.Monthla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.Monthla.AutoSize = true;
-            this.Monthla.BackColor = System.Drawing.Color.DarkGray;
-            this.Monthla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Monthla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Monthla.Location = new System.Drawing.Point(3, 0);
-            this.Monthla.Name = "Monthla";
-            this.Monthla.Size = new System.Drawing.Size(478, 42);
-            this.Monthla.TabIndex = 0;
-            this.Monthla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.payrollt.ImageIndex = 1;
+            this.payrollt.Location = new System.Drawing.Point(4, 31);
+            this.payrollt.Name = "payrollt";
+            this.payrollt.Padding = new System.Windows.Forms.Padding(3);
+            this.payrollt.Size = new System.Drawing.Size(885, 407);
+            this.payrollt.TabIndex = 1;
+            this.payrollt.Text = "Payroll";
+            this.payrollt.UseVisualStyleBackColor = true;
             // 
-            // table
+            // orderst
             // 
-            this.table.BackColor = System.Drawing.Color.Transparent;
-            this.table.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.table.ColumnCount = 8;
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.table.Controls.Add(this.label2, 0, 2);
-            this.table.Controls.Add(this.label3, 1, 0);
-            this.table.Controls.Add(this.label4, 2, 0);
-            this.table.Controls.Add(this.label5, 3, 0);
-            this.table.Controls.Add(this.label6, 4, 0);
-            this.table.Controls.Add(this.label7, 5, 0);
-            this.table.Controls.Add(this.label8, 6, 0);
-            this.table.Controls.Add(this.label9, 7, 0);
-            this.table.Controls.Add(this.label1, 0, 1);
-            this.table.Controls.Add(this.TrithLabel, 2, 1);
-            this.table.Controls.Add(this.TetarthLabel, 3, 1);
-            this.table.Controls.Add(this.PemthLabel, 4, 1);
-            this.table.Controls.Add(this.ParaskeuhLabel, 5, 1);
-            this.table.Controls.Add(this.SavvatoLabel, 6, 1);
-            this.table.Controls.Add(this.Kiriakilebel, 7, 1);
-            this.table.Controls.Add(this.DeuteraLabel, 1, 1);
-            this.table.Location = new System.Drawing.Point(6, 68);
-            this.table.Name = "table";
-            this.table.RowCount = 3;
-            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.20382F));
-            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.79618F));
-            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.table.Size = new System.Drawing.Size(714, 293);
-            this.table.TabIndex = 0;
+            this.orderst.ImageIndex = 2;
+            this.orderst.Location = new System.Drawing.Point(4, 31);
+            this.orderst.Name = "orderst";
+            this.orderst.Padding = new System.Windows.Forms.Padding(3);
+            this.orderst.Size = new System.Drawing.Size(885, 407);
+            this.orderst.TabIndex = 2;
+            this.orderst.Text = "Orders";
+            this.orderst.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // totalt
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkGray;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(4, 162);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 130);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "4-2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalt.ImageIndex = 4;
+            this.totalt.Location = new System.Drawing.Point(4, 31);
+            this.totalt.Name = "totalt";
+            this.totalt.Padding = new System.Windows.Forms.Padding(3);
+            this.totalt.Size = new System.Drawing.Size(885, 407);
+            this.totalt.TabIndex = 3;
+            this.totalt.Text = "Total";
+            this.totalt.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // logoutbutton
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkGray;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 1);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(1);
-            this.label3.Size = new System.Drawing.Size(73, 38);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Δευτερα";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.logoutbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.logoutbutton.Image = global::RestManag.Properties.Resources._67DE68533ACEFA4662846E6EC64D8C417888207FAEC5F2F62F_pimgpsh_fullsize_distr;
+            this.logoutbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutbutton.Location = new System.Drawing.Point(797, 448);
+            this.logoutbutton.Name = "logoutbutton";
+            this.logoutbutton.Size = new System.Drawing.Size(92, 32);
+            this.logoutbutton.TabIndex = 1;
+            this.logoutbutton.Text = "    Logout";
+            this.logoutbutton.UseVisualStyleBackColor = true;
+            this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
-            // label4
+            // tablest
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DarkGray;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(124, 1);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(1);
-            this.label4.Size = new System.Drawing.Size(93, 38);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Τριτη";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tablest.ImageIndex = 5;
+            this.tablest.Location = new System.Drawing.Point(4, 31);
+            this.tablest.Name = "tablest";
+            this.tablest.Padding = new System.Windows.Forms.Padding(3);
+            this.tablest.Size = new System.Drawing.Size(885, 407);
+            this.tablest.TabIndex = 4;
+            this.tablest.Text = "Tables";
+            this.tablest.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // paymentt
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DarkGray;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(224, 1);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(1);
-            this.label5.Size = new System.Drawing.Size(93, 38);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Τεταρτη";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.paymentt.ImageIndex = 3;
+            this.paymentt.Location = new System.Drawing.Point(4, 31);
+            this.paymentt.Name = "paymentt";
+            this.paymentt.Padding = new System.Windows.Forms.Padding(3);
+            this.paymentt.Size = new System.Drawing.Size(885, 407);
+            this.paymentt.TabIndex = 5;
+            this.paymentt.Text = "Payment";
+            this.paymentt.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // imageList1
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.DarkGray;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(324, 1);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(1);
-            this.label6.Size = new System.Drawing.Size(93, 38);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Πεμτη";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.DarkGray;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(424, 1);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(1);
-            this.label7.Size = new System.Drawing.Size(97, 38);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Παρασκευη";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.DarkGray;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(528, 1);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(1);
-            this.label8.Size = new System.Drawing.Size(90, 38);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Σαββατο";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.DarkGray;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(625, 1);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(1);
-            this.label9.Size = new System.Drawing.Size(85, 38);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Κυριακη";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DarkGray;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(4, 40);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(33, 121);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "8-4";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DeuteraLabel
-            // 
-            this.DeuteraLabel.AutoSize = true;
-            this.DeuteraLabel.Location = new System.Drawing.Point(44, 40);
-            this.DeuteraLabel.Name = "DeuteraLabel";
-            this.DeuteraLabel.Size = new System.Drawing.Size(13, 13);
-            this.DeuteraLabel.TabIndex = 9;
-            this.DeuteraLabel.Text = "d";
-            // 
-            // TrithLabel
-            // 
-            this.TrithLabel.AutoSize = true;
-            this.TrithLabel.Location = new System.Drawing.Point(124, 40);
-            this.TrithLabel.Name = "TrithLabel";
-            this.TrithLabel.Size = new System.Drawing.Size(13, 13);
-            this.TrithLabel.TabIndex = 10;
-            this.TrithLabel.Text = "d";
-            // 
-            // TetarthLabel
-            // 
-            this.TetarthLabel.AutoSize = true;
-            this.TetarthLabel.Location = new System.Drawing.Point(224, 40);
-            this.TetarthLabel.Name = "TetarthLabel";
-            this.TetarthLabel.Size = new System.Drawing.Size(13, 13);
-            this.TetarthLabel.TabIndex = 11;
-            this.TetarthLabel.Text = "d";
-            // 
-            // PemthLabel
-            // 
-            this.PemthLabel.AutoSize = true;
-            this.PemthLabel.Location = new System.Drawing.Point(324, 40);
-            this.PemthLabel.Name = "PemthLabel";
-            this.PemthLabel.Size = new System.Drawing.Size(13, 13);
-            this.PemthLabel.TabIndex = 12;
-            this.PemthLabel.Text = "d";
-            // 
-            // ParaskeuhLabel
-            // 
-            this.ParaskeuhLabel.AutoSize = true;
-            this.ParaskeuhLabel.Location = new System.Drawing.Point(424, 40);
-            this.ParaskeuhLabel.Name = "ParaskeuhLabel";
-            this.ParaskeuhLabel.Size = new System.Drawing.Size(13, 13);
-            this.ParaskeuhLabel.TabIndex = 13;
-            this.ParaskeuhLabel.Text = "d";
-            // 
-            // SavvatoLabel
-            // 
-            this.SavvatoLabel.AutoSize = true;
-            this.SavvatoLabel.Location = new System.Drawing.Point(528, 40);
-            this.SavvatoLabel.Name = "SavvatoLabel";
-            this.SavvatoLabel.Size = new System.Drawing.Size(13, 13);
-            this.SavvatoLabel.TabIndex = 14;
-            this.SavvatoLabel.Text = "d";
-            // 
-            // Kiriakilebel
-            // 
-            this.Kiriakilebel.AutoSize = true;
-            this.Kiriakilebel.Location = new System.Drawing.Point(625, 40);
-            this.Kiriakilebel.Name = "Kiriakilebel";
-            this.Kiriakilebel.Size = new System.Drawing.Size(13, 13);
-            this.Kiriakilebel.TabIndex = 15;
-            this.Kiriakilebel.Text = "d";
-            // 
-            // singlepayment
-            // 
-            this.singlepayment.Location = new System.Drawing.Point(4, 22);
-            this.singlepayment.Name = "singlepayment";
-            this.singlepayment.Padding = new System.Windows.Forms.Padding(3);
-            this.singlepayment.Size = new System.Drawing.Size(726, 399);
-            this.singlepayment.TabIndex = 1;
-            this.singlepayment.Text = "Single Payment";
-            this.singlepayment.UseVisualStyleBackColor = true;
-            // 
-            // totalpayment
-            // 
-            this.totalpayment.Location = new System.Drawing.Point(4, 22);
-            this.totalpayment.Name = "totalpayment";
-            this.totalpayment.Size = new System.Drawing.Size(726, 399);
-            this.totalpayment.TabIndex = 2;
-            this.totalpayment.Text = "Total Payment";
-            this.totalpayment.UseVisualStyleBackColor = true;
-            // 
-            // Addstaff
-            // 
-            this.Addstaff.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.Addstaff.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Addstaff.Location = new System.Drawing.Point(50, 364);
-            this.Addstaff.Name = "Addstaff";
-            this.Addstaff.Size = new System.Drawing.Size(73, 23);
-            this.Addstaff.TabIndex = 16;
-            this.Addstaff.Text = "Add";
-            this.Addstaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Addstaff.UseVisualStyleBackColor = true;
-            this.Addstaff.Click += new System.EventHandler(this.Addstaff_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "^FC67486DB7C6FFDDCB2AAC9CB79FF50686F895BF105800735C^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(1, "^3571942658B6D3D7B1088F4EB2947E836B25B6958EF37858F3^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(2, "^765B014C1BC2DDD82CEAB1473A610906B596AE8AC1C69BE32B^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(3, "^EACEB9109AD19CAD9C14CC28FD6E369F07335766A694A4BC89^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(4, "^BF506391190B1CE9C229840892F778C30D924FF7023B687E04^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(5, "^22C6953459BA1F947B96A92050982FFA9CF96CA203524BC7E7^pimgpsh_fullsize_distr.png");
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 424);
-            this.Controls.Add(this.tabControl1);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(893, 492);
+            this.Controls.Add(this.logoutbutton);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
             this.Text = "Admin";
-            this.tabControl1.ResumeLayout(false);
-            this.managmentstaff.ResumeLayout(false);
-            this.Month.ResumeLayout(false);
-            this.Month.PerformLayout();
-            this.table.ResumeLayout(false);
-            this.table.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.restDatabaseDataSet1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.programtab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage managmentstaff;
-        private System.Windows.Forms.TabPage singlepayment;
-        private System.Windows.Forms.TabPage totalpayment;
-        private System.Windows.Forms.TableLayoutPanel table;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TableLayoutPanel Month;
-        private System.Windows.Forms.Label Monthla;
-        private System.Windows.Forms.Label DeuteraLabel;
-        private System.Windows.Forms.Label TrithLabel;
-        private System.Windows.Forms.Label TetarthLabel;
-        private System.Windows.Forms.Label PemthLabel;
-        private System.Windows.Forms.Label ParaskeuhLabel;
-        private System.Windows.Forms.Label SavvatoLabel;
-        private System.Windows.Forms.Label Kiriakilebel;
-        private System.Windows.Forms.Button Addstaff;
+        private RestDatabaseDataSet restDatabaseDataSet1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabControl programtab;
+        private System.Windows.Forms.TabPage programt;
+        private System.Windows.Forms.TabPage payrollt;
+        private System.Windows.Forms.TabPage orderst;
+        private System.Windows.Forms.TabPage totalt;
+        private System.Windows.Forms.Button logoutbutton;
+        private System.Windows.Forms.TabPage paymentt;
+        private System.Windows.Forms.TabPage tablest;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

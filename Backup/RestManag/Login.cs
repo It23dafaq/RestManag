@@ -8,15 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using System.Data.OleDb;
+
 
 namespace RestManag
 {
     public partial class Login : Form
     {
-        private OleDbConnection con;
-        private String cmd;
-        private OleDbDataAdapter da,da1;
+        private SqlConnection con;
+        private SqlCommand cmd;
+        private SqlDataAdapter da,da1;
         private DataTable dt,dt1;
         
         
@@ -35,22 +35,16 @@ namespace RestManag
             
         }
 
-        private void Exitbutton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
-             con = new OleDbConnection (@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Stratos\Desktop\RestManag-master\RestManag\RestDatabase.accdb");
-             cmd = ("Select Count(*) FROM Users where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and Category=1");
-             da1 = new OleDbDataAdapter(cmd, con);
+           
+             con = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=Rest;Integrated Security=True;Pooling=False");
+             cmd = new SqlCommand("Select Count(*) FROM Rest where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and ISAdmin=1",con);
+             da1 = new SqlDataAdapter(cmd);
              dt1 = new DataTable();
              da1.Fill(dt1);
-            
 
-            da = new OleDbDataAdapter("Select Count(*) FROM Users where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and Category=0", con);
+            da = new SqlDataAdapter("Select Count(*) FROM Rest where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and ISAdmin=0",con);
             dt = new DataTable();
             da.Fill(dt);
            
