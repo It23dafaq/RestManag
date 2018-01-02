@@ -30,26 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
-            this.restDatabaseDataSet1 = new RestManag.RestDatabaseDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.programtab = new System.Windows.Forms.TabControl();
             this.programt = new System.Windows.Forms.TabPage();
             this.payrollt = new System.Windows.Forms.TabPage();
             this.orderst = new System.Windows.Forms.TabPage();
-            this.totalt = new System.Windows.Forms.TabPage();
-            this.logoutbutton = new System.Windows.Forms.Button();
-            this.tablest = new System.Windows.Forms.TabPage();
             this.paymentt = new System.Windows.Forms.TabPage();
+            this.totalt = new System.Windows.Forms.TabPage();
+            this.tablest = new System.Windows.Forms.TabPage();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.restDatabaseDataSet1)).BeginInit();
+            this.logoutbutton = new System.Windows.Forms.Button();
+            this.tableTableAdapter1 = new RestManag.CorrectDatabaseDataSetTableAdapters.TableTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.programtab.SuspendLayout();
+            this.tablest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // restDatabaseDataSet1
-            // 
-            this.restDatabaseDataSet1.DataSetName = "RestDatabaseDataSet";
-            this.restDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -108,6 +106,17 @@
             this.orderst.Text = "Orders";
             this.orderst.UseVisualStyleBackColor = true;
             // 
+            // paymentt
+            // 
+            this.paymentt.ImageIndex = 3;
+            this.paymentt.Location = new System.Drawing.Point(4, 31);
+            this.paymentt.Name = "paymentt";
+            this.paymentt.Padding = new System.Windows.Forms.Padding(3);
+            this.paymentt.Size = new System.Drawing.Size(885, 407);
+            this.paymentt.TabIndex = 5;
+            this.paymentt.Text = "Payment";
+            this.paymentt.UseVisualStyleBackColor = true;
+            // 
             // totalt
             // 
             this.totalt.ImageIndex = 4;
@@ -118,6 +127,33 @@
             this.totalt.TabIndex = 3;
             this.totalt.Text = "Total";
             this.totalt.UseVisualStyleBackColor = true;
+            // 
+            // tablest
+            // 
+            this.tablest.Controls.Add(this.tableLayoutPanel1);
+            this.tablest.ImageIndex = 5;
+            this.tablest.Location = new System.Drawing.Point(4, 31);
+            this.tablest.Name = "tablest";
+            this.tablest.Padding = new System.Windows.Forms.Padding(3);
+            this.tablest.Size = new System.Drawing.Size(885, 407);
+            this.tablest.TabIndex = 4;
+            this.tablest.Text = "Tables";
+            this.tablest.UseVisualStyleBackColor = true;
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "^FC67486DB7C6FFDDCB2AAC9CB79FF50686F895BF105800735C^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(1, "^3571942658B6D3D7B1088F4EB2947E836B25B6958EF37858F3^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(2, "^765B014C1BC2DDD82CEAB1473A610906B596AE8AC1C69BE32B^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(3, "^EACEB9109AD19CAD9C14CC28FD6E369F07335766A694A4BC89^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(4, "^BF506391190B1CE9C229840892F778C30D924FF7023B687E04^pimgpsh_fullsize_distr.png");
+            this.imageList1.Images.SetKeyName(5, "^22C6953459BA1F947B96A92050982FFA9CF96CA203524BC7E7^pimgpsh_fullsize_distr.png");
             // 
             // logoutbutton
             // 
@@ -132,38 +168,29 @@
             this.logoutbutton.UseVisualStyleBackColor = true;
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
-            // tablest
+            // tableTableAdapter1
             // 
-            this.tablest.ImageIndex = 5;
-            this.tablest.Location = new System.Drawing.Point(4, 31);
-            this.tablest.Name = "tablest";
-            this.tablest.Padding = new System.Windows.Forms.Padding(3);
-            this.tablest.Size = new System.Drawing.Size(885, 407);
-            this.tablest.TabIndex = 4;
-            this.tablest.Text = "Tables";
-            this.tablest.UseVisualStyleBackColor = true;
+            this.tableTableAdapter1.ClearBeforeFill = true;
             // 
-            // paymentt
+            // tableLayoutPanel1
             // 
-            this.paymentt.ImageIndex = 3;
-            this.paymentt.Location = new System.Drawing.Point(4, 31);
-            this.paymentt.Name = "paymentt";
-            this.paymentt.Padding = new System.Windows.Forms.Padding(3);
-            this.paymentt.Size = new System.Drawing.Size(885, 407);
-            this.paymentt.TabIndex = 5;
-            this.paymentt.Text = "Payment";
-            this.paymentt.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "^FC67486DB7C6FFDDCB2AAC9CB79FF50686F895BF105800735C^pimgpsh_fullsize_distr.png");
-            this.imageList1.Images.SetKeyName(1, "^3571942658B6D3D7B1088F4EB2947E836B25B6958EF37858F3^pimgpsh_fullsize_distr.png");
-            this.imageList1.Images.SetKeyName(2, "^765B014C1BC2DDD82CEAB1473A610906B596AE8AC1C69BE32B^pimgpsh_fullsize_distr.png");
-            this.imageList1.Images.SetKeyName(3, "^EACEB9109AD19CAD9C14CC28FD6E369F07335766A694A4BC89^pimgpsh_fullsize_distr.png");
-            this.imageList1.Images.SetKeyName(4, "^BF506391190B1CE9C229840892F778C30D924FF7023B687E04^pimgpsh_fullsize_distr.png");
-            this.imageList1.Images.SetKeyName(5, "^22C6953459BA1F947B96A92050982FFA9CF96CA203524BC7E7^pimgpsh_fullsize_distr.png");
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(194, 47);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(463, 297);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Admin
             // 
@@ -176,16 +203,18 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
             this.Text = "Admin";
-            ((System.ComponentModel.ISupportInitialize)(this.restDatabaseDataSet1)).EndInit();
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.panel1.ResumeLayout(false);
             this.programtab.ResumeLayout(false);
+            this.tablest.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private RestDatabaseDataSet restDatabaseDataSet1;
+       
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl programtab;
         private System.Windows.Forms.TabPage programt;
@@ -196,5 +225,10 @@
         private System.Windows.Forms.TabPage paymentt;
         private System.Windows.Forms.TabPage tablest;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.BindingSource tableBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tableCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seatsDataGridViewTextBoxColumn;
+        private CorrectDatabaseDataSetTableAdapters.TableTableAdapter tableTableAdapter1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

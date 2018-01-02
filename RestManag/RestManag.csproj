@@ -81,16 +81,16 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="CorrectDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RestDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RestDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Waiter.cs">
       <SubType>Form</SubType>
@@ -123,6 +123,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="CorrectDatabaseDataSet.xsc">
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CorrectDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CorrectDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CorrectDatabaseDataSet.xss">
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,17 +143,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="RestDatabaseDataSet.xsc">
-      <DependentUpon>RestDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RestDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RestDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RestDatabaseDataSet.xss">
-      <DependentUpon>RestDatabaseDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\^5267D02493EE38C82638607BE0A3359A80C606FC85DDAE7583^pimgpsh_fullsize_distr.png" />
@@ -162,9 +162,13 @@
     <None Include="Resources\^A380217C410BF3FCC7681F61D9F1A0D73479A436098EC30221^pimgpsh_fullsize_distr.png" />
     <None Include="Resources\^5FC673A9C9288F4AA7262B8164A53743B2AD3CF94BC4C9AEA3^pimgpsh_fullsize_distr.png" />
     <None Include="Resources\^DC68CEE5D7E4F20258F9B0F18E9138F2BC26907DE5AE74B2B2^pimgpsh_fullsize_distr.png" />
-    <Content Include="RestDatabase.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CorrectDatabase.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\^AAE851C2876E4A968CB402138366A77A2D3D0446854C20C923^pimgpsh_fullsize_distr.png" />
+    <Content Include="Resources\^B30A33B3F310F5203A93CD135AC3732367BC7355D0F90C89B8^pimgpsh_fullsize_distr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

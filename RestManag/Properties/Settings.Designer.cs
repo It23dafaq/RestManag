@@ -42,5 +42,16 @@ namespace RestManag.Properties {
                 return ((string)(this["RestDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\CorrectDatabase.acc" +
+            "db")]
+        public string CorrectDatabaseConnectionString {
+            get {
+                return ((string)(this["CorrectDatabaseConnectionString"]));
+            }
+        }
     }
 }

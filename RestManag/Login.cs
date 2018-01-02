@@ -43,7 +43,7 @@ namespace RestManag
         private void button1_Click(object sender, EventArgs e)
         {
             
-             con = new OleDbConnection (@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Stratos\Desktop\RestManag-master\RestManag\RestDatabase.accdb");
+             con = new OleDbConnection (@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Stratos\Documents\GitHub\RestManag\RestManag\CorrectDatabase.accdb");
              cmd = ("Select Count(*) FROM Users where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and Category=1");
              da1 = new OleDbDataAdapter(cmd, con);
              dt1 = new DataTable();

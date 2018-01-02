@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usersTableAdapter1 = new RestManag.RestDatabaseDataSetTableAdapters.UsersTableAdapter();
             this.usernamel = new System.Windows.Forms.Label();
             this.passwordl = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,13 +37,10 @@
             this.Loginbutton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Exitbutton = new System.Windows.Forms.Button();
+            this.usersTableAdapter1 = new RestManag.CorrectDatabaseDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
             // 
             // usernamel
             // 
@@ -139,6 +135,10 @@
             this.Exitbutton.UseVisualStyleBackColor = true;
             this.Exitbutton.Click += new System.EventHandler(this.Exitbutton_Click);
             // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,7 +167,7 @@
         }
 
         #endregion
-        private RestDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        
         private System.Windows.Forms.Button Loginbutton;
         private System.Windows.Forms.Label usernamel;
         private System.Windows.Forms.Label passwordl;
@@ -177,6 +177,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Exitbutton;
+        private CorrectDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
     }
 }
 
