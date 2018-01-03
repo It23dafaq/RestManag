@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13EFE113-A806-47CE-83A6-CF7879506975}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestManag</RootNamespace>
+    <AssemblyName>RestManag</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.10\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CorrectDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Waiter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Waiter.Designer.cs">
+      <DependentUpon>Waiter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Waiter.resx">
+      <DependentUpon>Waiter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="CorrectDatabaseDataSet.xsc">
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CorrectDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CorrectDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CorrectDatabaseDataSet.xss">
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\^5267D02493EE38C82638607BE0A3359A80C606FC85DDAE7583^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^E2044651974571362A01E7FB777DE9A7886909B0A98A6D6AB2^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^776022FAF85955B3DCA4CF1E576C106697D03916556D9FE294^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^3BE0800188BB83BD4D39F91CDC0115933667C30FC0333D8E5D^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^DF2702CDC66BD7FA8BCD2E76469E0565B7AD6C7E225CC026F6^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\original_014-matteo-rizzo-funghi-porcini-timo.jpg" />
+    <None Include="Resources\abstract-1239434_960_720.jpg" />
+    <None Include="Resources\^2B601CF12D3B1EC04D7B52FC07D06490A340B45C85BB83F735^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^2B601CF12D3B1EC04D7B52FC07D06490A340B45C85BB83F735^pimgpsh_fullsize_distr1.png" />
+    <None Include="Resources\61facfffd64d491a317e1cfc20f85ca9.jpg" />
+    <None Include="Resources\^65546C1F9FCB44509DEC1014CF6CFF3735B3725433E8D52D07^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^E2044651974571362A01E7FB777DE9A7886909B0A98A6D6AB2^pimgpsh_fullsize_distr1.png" />
+    <None Include="Resources\^EFCD9BD0AFF58BBE49EDC16D0DC6BC306EAA433B03BEE04077^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^67DE68533ACEFA4662846E6EC64D8C417888207FAEC5F2F62F^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^A380217C410BF3FCC7681F61D9F1A0D73479A436098EC30221^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^5FC673A9C9288F4AA7262B8164A53743B2AD3CF94BC4C9AEA3^pimgpsh_fullsize_distr.png" />
+    <None Include="Resources\^DC68CEE5D7E4F20258F9B0F18E9138F2BC26907DE5AE74B2B2^pimgpsh_fullsize_distr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CorrectDatabase.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\^AAE851C2876E4A968CB402138366A77A2D3D0446854C20C923^pimgpsh_fullsize_distr.png" />
+    <Content Include="Resources\^B30A33B3F310F5203A93CD135AC3732367BC7355D0F90C89B8^pimgpsh_fullsize_distr.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
