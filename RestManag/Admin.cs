@@ -47,8 +47,10 @@ namespace RestManag
 
         private void Admin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'correctDatabaseDataSet.Hours' table. You can move, or remove it, as needed.
+            this.hoursTableAdapter.Fill(this.correctDatabaseDataSet.Hours);
             // TODO: This line of code loads data into the 'restDatabaseDataSet1.Table' table. You can move, or remove it, as needed.
-         
+
 
 
 
@@ -122,6 +124,41 @@ namespace RestManag
             b.BackColor = Color.Red;
 
             
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            String username = textBox1.Text,
+                hour = hourSpin.Value.ToString(),
+                minute = minuteSpin.Value.ToString();
+            String time = hour  +":"+ minute;
+            int duration = (int)(durationSpin.Value);
+            String date = dateTimePicker.Value.ToShortDateString();
+            DateTime dt = Convert.ToDateTime(date);
+            DateTime dt2 = Convert.ToDateTime(time);
+            hoursTableAdapter.InsertHours(username, dt, dt2, duration);
+
+        }
+
+        private void colon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            String username = textBox1.Text,
+                hour = hourSpin.Value.ToString(),
+                minute = minuteSpin.Value.ToString();
+            String time = hour + ":" + minute;
+            int duration = (int)(durationSpin.Value);
+            String date = dateTimePicker.Value.ToShortDateString();
+            DateTime dt = Convert.ToDateTime(date);
+            DateTime dt2 = Convert.ToDateTime(time);
+            String un;
+            DateTime datepre, timepre;
+            hoursTableAdapter.GetHours(un,datepre, timepre);
+            hoursTableAdapter.UpdateHours(username, dt, dt2, duration);
         }
     }
 }

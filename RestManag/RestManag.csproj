@@ -81,6 +81,9 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="CorrectDatabaseDataSet.cs">
+      <DependentUpon>CorrectDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CorrectDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,7 +154,6 @@
     <None Include="Resources\^3BE0800188BB83BD4D39F91CDC0115933667C30FC0333D8E5D^pimgpsh_fullsize_distr.png" />
     <None Include="Resources\^DF2702CDC66BD7FA8BCD2E76469E0565B7AD6C7E225CC026F6^pimgpsh_fullsize_distr.png" />
     <None Include="Resources\original_014-matteo-rizzo-funghi-porcini-timo.jpg" />
-    <None Include="Resources\abstract-1239434_960_720.jpg" />
     <None Include="Resources\^2B601CF12D3B1EC04D7B52FC07D06490A340B45C85BB83F735^pimgpsh_fullsize_distr.png" />
     <None Include="Resources\^2B601CF12D3B1EC04D7B52FC07D06490A340B45C85BB83F735^pimgpsh_fullsize_distr1.png" />
     <None Include="Resources\61facfffd64d491a317e1cfc20f85ca9.jpg" />

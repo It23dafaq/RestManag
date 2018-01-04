@@ -213,16 +213,6 @@ namespace RestManag.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap abstract_1239434_960_720 {
-            get {
-                object obj = ResourceManager.GetObject("abstract-1239434_960_720", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap original_014_matteo_rizzo_funghi_porcini_timo {
             get {
                 object obj = ResourceManager.GetObject("original_014-matteo-rizzo-funghi-porcini-timo", resourceCulture);
