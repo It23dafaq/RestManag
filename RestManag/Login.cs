@@ -42,29 +42,22 @@ namespace RestManag
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-             con = new OleDbConnection (@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\dafou\Documents\GitHub\RestManag-master\RestManag\CorrectDatabase.accdb");
-             cmd = ("Select Count(*) FROM Users where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and Category=1");
-             da1 = new OleDbDataAdapter(cmd, con);
-             dt1 = new DataTable();
-             da1.Fill(dt1);
-            
 
-            da = new OleDbDataAdapter("Select Count(*) FROM Users where username='" + textBox1.Text + "' and password ='" + textBox2.Text + "'" + " and Category=0", con);
-            dt = new DataTable();
-            da.Fill(dt);
-           
-            if (dt.Rows[0][0].ToString() == "1")
-            { 
-                Waiter w = new Waiter(); // This is bad
-                w.Show();
-                
-            }
-            else if(dt1.Rows[0][0].ToString()== "1"){
+            if (usersTableAdapter1.checkLogin(textBox1.Text, textBox2.Text, 1).Value==1)
+            {
                 this.Hide();
                 Admin a = new Admin();
                 a.Show();
-            }else
+            }
+
+            else if (usersTableAdapter1.checkLogin(textBox1.Text, textBox2.Text, 0).Value == 1)
+            {
+                this.Hide();
+                Waiter w = new Waiter(); // This is bad
+                w.Show();
+
+            }
+            else
             {
                 MessageBox.Show("please check you username and password");
             }
