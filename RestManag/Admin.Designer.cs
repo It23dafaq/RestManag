@@ -48,21 +48,22 @@
             this.startLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.durationLabel = new System.Windows.Forms.Label();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.hourSpin = new System.Windows.Forms.NumericUpDown();
             this.minuteSpin = new System.Windows.Forms.NumericUpDown();
             this.colon = new System.Windows.Forms.Label();
             this.durationSpin = new System.Windows.Forms.NumericUpDown();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoursBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.correctDatabaseDataSet = new RestManag.CorrectDatabaseDataSet();
             this.tableTableAdapter1 = new RestManag.CorrectDatabaseDataSetTableAdapters.TableTableAdapter();
             this.hoursTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.HoursTableAdapter();
+            this.usersTableAdapter1 = new RestManag.CorrectDatabaseDataSetTableAdapters.UsersTableAdapter();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.programtab.SuspendLayout();
             this.programt.SuspendLayout();
@@ -107,7 +108,7 @@
             this.programt.Controls.Add(this.minuteSpin);
             this.programt.Controls.Add(this.hourSpin);
             this.programt.Controls.Add(this.dateTimePicker);
-            this.programt.Controls.Add(this.updateButton);
+            this.programt.Controls.Add(this.deleteButton);
             this.programt.Controls.Add(this.addButton);
             this.programt.Controls.Add(this.durationLabel);
             this.programt.Controls.Add(this.timeLabel);
@@ -286,15 +287,15 @@
             this.durationLabel.TabIndex = 8;
             this.durationLabel.Text = "Duration";
             // 
-            // updateButton
+            // deleteButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(605, 280);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(75, 32);
-            this.updateButton.TabIndex = 2;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.deleteButton.Location = new System.Drawing.Point(605, 280);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 32);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // addButton
             // 
@@ -345,7 +346,6 @@
             this.colon.Size = new System.Drawing.Size(14, 22);
             this.colon.TabIndex = 13;
             this.colon.Text = ":";
-            this.colon.Click += new System.EventHandler(this.colon_Click);
             // 
             // durationSpin
             // 
@@ -369,30 +369,6 @@
             0,
             0});
             // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            // 
-            // startDataGridViewTextBoxColumn
-            // 
-            this.startDataGridViewTextBoxColumn.DataPropertyName = "Start";
-            this.startDataGridViewTextBoxColumn.HeaderText = "Start";
-            this.startDataGridViewTextBoxColumn.Name = "startDataGridViewTextBoxColumn";
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
-            // 
-            // durationDataGridViewTextBoxColumn
-            // 
-            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
-            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
-            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
-            // 
             // hoursBindingSource
             // 
             this.hoursBindingSource.DataMember = "Hours";
@@ -410,6 +386,38 @@
             // hoursTableAdapter
             // 
             this.hoursTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.Frozen = true;
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // startDataGridViewTextBoxColumn
+            // 
+            this.startDataGridViewTextBoxColumn.DataPropertyName = "Start";
+            this.startDataGridViewTextBoxColumn.Frozen = true;
+            this.startDataGridViewTextBoxColumn.HeaderText = "Start";
+            this.startDataGridViewTextBoxColumn.Name = "startDataGridViewTextBoxColumn";
+            // 
+            // timeDataGridViewTextBoxColumn
+            // 
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
+            this.timeDataGridViewTextBoxColumn.Frozen = true;
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
+            this.durationDataGridViewTextBoxColumn.Frozen = true;
+            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
             // 
             // Admin
             // 
@@ -461,21 +469,22 @@
         private CorrectDatabaseDataSet correctDatabaseDataSet;
         private System.Windows.Forms.BindingSource hoursBindingSource;
         private CorrectDatabaseDataSetTableAdapters.HoursTableAdapter hoursTableAdapter;
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label durationLabel;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label startLabel;
         private System.Windows.Forms.Label usenameLabel;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label colon;
         private System.Windows.Forms.NumericUpDown minuteSpin;
         private System.Windows.Forms.NumericUpDown hourSpin;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.NumericUpDown durationSpin;
+        private CorrectDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
     }
 }
