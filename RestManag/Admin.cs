@@ -78,7 +78,7 @@ namespace RestManag
 
                 button.Text = tableTableAdapter1.GetTableCode().Rows[i][0].ToString();
                 button.AutoSize = true;
-                button.Image = Image.FromFile(@"^B30A33B3F310F5203A93CD135AC3732367BC7355D0F90C89B8^pimgpsh_fullsize_distr.png");
+              //  button.Image = Image.FromFile(@"^B30A33B3F310F5203A93CD135AC3732367BC7355D0F90C89B8^pimgpsh_fullsize_distr.png");
 
                 
 
