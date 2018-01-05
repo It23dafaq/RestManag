@@ -42,13 +42,13 @@ namespace RestManag {
         
         private global::System.Data.DataRelation relationProductOrder;
         
-        private global::System.Data.DataRelation relationTableOrder;
-        
         private global::System.Data.DataRelation relationUsersOrder;
         
         private global::System.Data.DataRelation relationOrderPayment;
         
         private global::System.Data.DataRelation relationUsersPayroll;
+        
+        private global::System.Data.DataRelation relationTableOrder;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -352,10 +352,10 @@ namespace RestManag {
             }
             this.relationUsersHours = this.Relations["UsersHours"];
             this.relationProductOrder = this.Relations["ProductOrder"];
-            this.relationTableOrder = this.Relations["TableOrder"];
             this.relationUsersOrder = this.Relations["UsersOrder"];
             this.relationOrderPayment = this.Relations["OrderPayment"];
             this.relationUsersPayroll = this.Relations["UsersPayroll"];
+            this.relationTableOrder = this.Relations["TableOrder"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -388,10 +388,6 @@ namespace RestManag {
                         this.tableProduct.CodeColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrder.PcodeColumn}, false);
             this.Relations.Add(this.relationProductOrder);
-            this.relationTableOrder = new global::System.Data.DataRelation("TableOrder", new global::System.Data.DataColumn[] {
-                        this.tableTable.TableCodeColumn}, new global::System.Data.DataColumn[] {
-                        this.tableOrder.TcodeColumn}, false);
-            this.Relations.Add(this.relationTableOrder);
             this.relationUsersOrder = new global::System.Data.DataRelation("UsersOrder", new global::System.Data.DataColumn[] {
                         this.tableUsers.UsernameColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrder.UsernameColumn}, false);
@@ -404,6 +400,10 @@ namespace RestManag {
                         this.tableUsers.UsernameColumn}, new global::System.Data.DataColumn[] {
                         this.tablePayroll.UsernameColumn}, false);
             this.Relations.Add(this.relationUsersPayroll);
+            this.relationTableOrder = new global::System.Data.DataRelation("TableOrder", new global::System.Data.DataColumn[] {
+                        this.tableTable.TableCodeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableOrder.TcodeColumn}, false);
+            this.Relations.Add(this.relationTableOrder);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2162,13 +2162,6 @@ namespace RestManag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRow FindByTableCode(int TableCode) {
-                return ((TableRow)(this.Rows.Find(new object[] {
-                            TableCode})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 TableDataTable cln = ((TableDataTable)(base.Clone()));
                 cln.InitVars();
@@ -2196,7 +2189,7 @@ namespace RestManag {
                 this.columnSeats = new global::System.Data.DataColumn("Seats", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeats);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnTableCode}, true));
+                                this.columnTableCode}, false));
                 this.columnTableCode.AllowDBNull = false;
                 this.columnTableCode.Unique = true;
                 this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
@@ -2871,23 +2864,23 @@ namespace RestManag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRow TableRow {
-                get {
-                    return ((TableRow)(this.GetParentRow(this.Table.ParentRelations["TableOrder"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["TableOrder"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public UsersRow UsersRow {
                 get {
                     return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["UsersOrder"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["UsersOrder"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TableRow TableRow {
+                get {
+                    return ((TableRow)(this.GetParentRow(this.Table.ParentRelations["TableOrder"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["TableOrder"]);
                 }
             }
             
@@ -4579,11 +4572,23 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Code, Pcode, Tcode, Username, OrderDate, Total, Comments FROM [Order]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO `Order` (`Code`, `Pcode`, `Tcode`, `Username`, `OrderDate`, `Total`, " +
+                "`Comments`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Pcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Pcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Total", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "Total", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Comments", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comments", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4900,6 +4905,71 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
             return this.Update(Original_Code, Pcode, Tcode, Username, OrderDate, Total, Comments, Original_Code, Original_Pcode, Original_Tcode, Original_Username, Original_OrderDate, Original_Total, Original_Comments);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertOrder(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<decimal> Total, string Comments) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((Code.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(Code.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Pcode.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(Pcode.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Tcode.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(Tcode.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Username == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Username));
+            }
+            if ((OrderDate.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(OrderDate.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Total.HasValue == true)) {
+                command.Parameters[5].Value = ((decimal)(Total.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Comments == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Comments));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -5415,11 +5485,20 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Username, Salary, Bonus FROM Payroll";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "UPDATE `Payroll` SET `Username` = ?, `Salary` = ?, `Bonus` = ? WHERE (`Username` " +
+                "= ?) ";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Salary", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Bonus", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "Bonus", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5602,6 +5681,48 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(decimal Salary, global::System.Nullable<decimal> Bonus, string Original_Username, decimal Original_Salary, global::System.Nullable<decimal> Original_Bonus) {
             return this.Update(Original_Username, Salary, Bonus, Original_Username, Original_Salary, Original_Bonus);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdatePayroll(string Username, decimal Salary, global::System.Nullable<decimal> Bonus, string Original_Username) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((Username == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Username));
+            }
+            command.Parameters[1].Value = ((decimal)(Salary));
+            if ((Bonus.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(Bonus.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Username == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Original_Username));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -6191,28 +6312,28 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Table` WHERE ((`TableCode` = ?) AND ((? = 1 AND `Seats` IS NULL) OR " +
-                "(`Seats` = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Table` WHERE (((? = 1 AND `Seats` IS NULL) OR (`Seats` = ?)) AND (`T" +
+                "ableCode` = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Seats", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Seats", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Seats", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Seats", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Table` (`TableCode`, `Seats`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Table` (`Seats`, `TableCode`) VALUES (?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Seats", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Seats", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Table` SET `TableCode` = ?, `Seats` = ? WHERE ((`TableCode` = ?) AND ((? " +
-                "= 1 AND `Seats` IS NULL) OR (`Seats` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Table` SET `Seats` = ?, `TableCode` = ? WHERE (((? = 1 AND `Seats` IS NUL" +
+                "L) OR (`Seats` = ?)) AND (`TableCode` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Seats", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Seats", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Seats", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Seats", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Seats", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Seats", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6225,27 +6346,38 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TableCode, Seats FROM [Table]";
+            this._commandCollection[0].CommandText = "SELECT Seats, TableCode FROM [Table] WHERE (TableCode = ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TableCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TableCode", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT COUNT(*) FROM [Table]";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT TableCode  FROM [Table]";
+            this._commandCollection[2].CommandText = "SELECT Seats, TableCode FROM [Table]";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT Seats, TableCode FROM [Table]";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CorrectDatabaseDataSet.TableDataTable dataTable) {
+        public virtual int FillSeats2(CorrectDatabaseDataSet.TableDataTable dataTable, global::System.Nullable<int> TableCode) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((TableCode.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TableCode.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6257,8 +6389,14 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CorrectDatabaseDataSet.TableDataTable GetData() {
+        public virtual CorrectDatabaseDataSet.TableDataTable GetSeats2(global::System.Nullable<int> TableCode) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((TableCode.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TableCode.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             CorrectDatabaseDataSet.TableDataTable dataTable = new CorrectDatabaseDataSet.TableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6268,7 +6406,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillTableCode(CorrectDatabaseDataSet.TableDataTable dataTable) {
+        public virtual int FillSeats(CorrectDatabaseDataSet.TableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6281,8 +6419,32 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual CorrectDatabaseDataSet.TableDataTable GetTableCode() {
+        public virtual CorrectDatabaseDataSet.TableDataTable GetSeats() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            CorrectDatabaseDataSet.TableDataTable dataTable = new CorrectDatabaseDataSet.TableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillTableCode(CorrectDatabaseDataSet.TableDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual CorrectDatabaseDataSet.TableDataTable GetTableCode() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             CorrectDatabaseDataSet.TableDataTable dataTable = new CorrectDatabaseDataSet.TableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6321,19 +6483,19 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(global::System.Nullable<int> Original_TableCode, global::System.Nullable<int> Original_Seats) {
-            if ((Original_TableCode.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TableCode.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+        public virtual int Delete(global::System.Nullable<int> Original_Seats, global::System.Nullable<int> Original_TableCode) {
             if ((Original_Seats.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Seats.Value));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Seats.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TableCode.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_TableCode.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
@@ -6356,15 +6518,15 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> TableCode, global::System.Nullable<int> Seats) {
-            if ((TableCode.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TableCode.Value));
+        public virtual int Insert(global::System.Nullable<int> Seats, global::System.Nullable<int> TableCode) {
+            if ((Seats.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Seats.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((Seats.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Seats.Value));
+            if ((TableCode.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TableCode.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -6389,31 +6551,31 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> TableCode, global::System.Nullable<int> Seats, global::System.Nullable<int> Original_TableCode, global::System.Nullable<int> Original_Seats) {
-            if ((TableCode.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TableCode.Value));
+        public virtual int Update(global::System.Nullable<int> Seats, global::System.Nullable<int> TableCode, global::System.Nullable<int> Original_Seats, global::System.Nullable<int> Original_TableCode) {
+            if ((Seats.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Seats.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((Seats.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Seats.Value));
+            if ((TableCode.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TableCode.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Original_TableCode.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_TableCode.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             if ((Original_Seats.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Seats.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Seats.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TableCode.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_TableCode.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -6430,14 +6592,6 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Seats, global::System.Nullable<int> Original_TableCode, global::System.Nullable<int> Original_Seats) {
-            return this.Update(Original_TableCode, Seats, Original_TableCode, Original_Seats);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

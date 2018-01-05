@@ -20,7 +20,8 @@ namespace RestManag
             string SQL3 = "SELECT Pname FROM Product WHERE Category ='Appetizer'";
             string SQL4 = "SELECT Pname FROM Product WHERE Category ='Main Dish'";
             string SQL5 = "SELECT Pname FROM Product WHERE Category = 'Sweet'";
-
+            string SQL6 = "SELECT Pname FROM Product WHERE Category='Salad'";
+            
 
             using (OleDbDataAdapter sda = new OleDbDataAdapter(SQL2, Properties.Settings.Default.CorrectDatabaseConnectionString))
             {
@@ -54,59 +55,159 @@ namespace RestManag
                 dessertListBox.DisplayMember = "Pname";
                 dessertListBox.Click += click_do;
             }
+            using (OleDbDataAdapter sda4 = new OleDbDataAdapter(SQL6, Properties.Settings.Default.CorrectDatabaseConnectionString))
+            {
+                DataTable dat = new DataTable();
+                sda4.Fill(dat);
+                listBox1.DataSource = dat;
+                listBox1.DisplayMember = "Pname";
+                listBox1.Click += click_do;
+            }
+            //this.Kappa();
+            /*if (tabControl1.SelectedTab == Tablest)
+            {
+                Addbutton.Visible = false;
+                Removebutton.Visible = false;
+            }
+            else if (tabControl1.SelectedTab == drinkst || tabControl1.SelectedTab == appetizert || tabControl1.SelectedTab == saladt || tabControl1.SelectedTab == maindishest || tabControl1.SelectedTab ==dessertt || tabControl1.SelectedTab ==paymentt)
+            {
+                Addbutton.Visible = true;
+                Removebutton.Visible = true;
+            }*/
+
         }
 
         private void click_do(object sender, EventArgs e)
         {
-           /*
+           
             if (drinksListBox.Text.Equals("Water"))
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/water.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.water;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-
+                
             }
             else if (drinksListBox.Text.Equals("Coke"))
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/coce.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.coce;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }
             else if (drinksListBox.Text.Equals("Sprite"))
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/sprite.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.sprite;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }else if (drinksListBox.Text.Equals("Red Wine"))
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/rwhine.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.rwhine;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }else if (drinksListBox.Text.Equals("White Wine"))
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/wwhine.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.wwhine;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }else if (drinksListBox.Text.Equals("Vodka")) {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/belfe.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.belfe;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
 
             }else if (drinksListBox.Text.Equals("Whiskey"))
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/jonnie.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.jonnie;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }else if (drinksListBox.Text.Equals("Gin"))
 
             {
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/jin.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.jin;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }
             else if(drinksListBox.Text.Equals("Rum"))
             {   //rum
-                pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/diplomatias.jpg");
+                pictureBox1.Image = RestManag.Properties.Resources.diplomatias;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }
+            if (appetizzerListBox.Text.Equals("Fried Potatoes")) {
+                pictureBox2.Image = RestManag.Properties.Resources.patates;
+                this.pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (appetizzerListBox.Text.Equals("Grilled Potatoes")){ 
+            pictureBox2.Image = RestManag.Properties.Resources.patates1;
+            this.pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (appetizzerListBox.Text.Equals("Greek Cheese")){
+                pictureBox2.Image = RestManag.Properties.Resources.tiraki;
+                this.pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (appetizzerListBox.Text.Equals("Yeast Rolls"))
+            {
+                pictureBox2.Image = RestManag.Properties.Resources.mana;
+                this.pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else
+            {
+                pictureBox2.Image = RestManag.Properties.Resources.party_poppers;
+                this.pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            if (mainDishListBox.Text.Equals("Chicken Wings"))
+            {
+                pictureBox3.Image = RestManag.Properties.Resources.kotopoulo;
+                this.pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (mainDishListBox.Text.Equals("Deluxe Burger"))
+            {
+                pictureBox3.Image = RestManag.Properties.Resources.burger;
+                this.pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (mainDishListBox.Text.Equals("Seafood Pasta"))
+            {
+                pictureBox3.Image = RestManag.Properties.Resources.seafood1;
+                this.pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else
+            {
+                pictureBox3.Image = RestManag.Properties.Resources.lamp;
+                this.pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
 
-            */
+            }
+            if (listBox1.Text.Equals("Green Salad"))
+            {
+                pictureBox5.Image = RestManag.Properties.Resources.greensalad;
+                this.pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (listBox1.Text.Equals("Curry Salad"))
+            {
+                pictureBox5.Image = RestManag.Properties.Resources.currysalad;
+                this.pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (listBox1.Text.Equals("Coleslaw"))
+            {
+                pictureBox5.Image = RestManag.Properties.Resources.coleslawsalad;
+                this.pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else
+            {
+                pictureBox5.Image = RestManag.Properties.Resources.chefsalad;
+                this.pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            if (dessertListBox.Text.Equals("Chocolate Ball"))
+            {
+                pictureBox4.Image = RestManag.Properties.Resources.chocoball1;
+                this.pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else if (dessertListBox.Text.Equals("Cheese Cake"))
+            {
+                pictureBox4.Image = RestManag.Properties.Resources.cheesecake;
+                this.pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
+            else
+            {
+                pictureBox4.Image = RestManag.Properties.Resources.milfake;
+                this.pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            }
         }
             
 
+         //private void Kappa(object sender, PaintEventArgs e)
+         //{
             
+            
+         //}   
         
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -144,8 +245,6 @@ namespace RestManag
             {
                 DataTable t = productTableAdapter.GetDataBy(drinksListBox.Text);
                 dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
-
-
             }
             else if (tabControl1.SelectedIndex == 2)
             {
@@ -154,10 +253,15 @@ namespace RestManag
             }
             else if (tabControl1.SelectedIndex == 3)
             {
-                DataTable t = productTableAdapter.GetDataBy(mainDishListBox.Text);
+                DataTable t = productTableAdapter.GetDataBy(listBox1.Text);
                 dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
             }
             else if (tabControl1.SelectedIndex == 4)
+            {
+                DataTable t = productTableAdapter.GetDataBy(mainDishListBox.Text);
+                dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
+            }
+            else if (tabControl1.SelectedIndex == 5)
             {
                 DataTable t = productTableAdapter.GetDataBy(dessertListBox.Text);
                 dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
@@ -169,8 +273,8 @@ namespace RestManag
             {
                 sum1 += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
             }
-            totalSum.Text = sum1.ToString();
-            costLabel.Text = sum1.ToString();
+            totalSum.Text = sum1.ToString()+ " €";
+            costLabel.Text = sum1.ToString()+ " €";
             
 
         }
@@ -182,6 +286,31 @@ namespace RestManag
                 dataGridView1.Rows.RemoveAt(item.Index);
             }
         }
+
+        private void plox(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            tableLabel.Text = b.Text;
+            if (b.Tag == "green")
+            {
+                b.Image = RestManag.Properties.Resources.images2;
+
+                b.Tag = "red";
+            }
+            else
+            {
+                b.Image = RestManag.Properties.Resources.images;
+                b.Tag = "green";
+            }
+        }
+        private void trapezia(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            int tcode = Int32.Parse(b.Text);
+            DataTable dt = tableTableAdapter1.GetSeats2(tcode);
+            String s = dt.Rows[0]["Seats"].ToString();
+            ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
+            toolTip1.SetToolTip(b, "seats: " + s);
+        }
     }
-    //dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = listBox1.SelectedItems[0].ToString();
 }

@@ -169,6 +169,41 @@
     <Content Include="CorrectDatabase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Household-Table-icon.png" />
+    <None Include="Resources\redtable.png" />
+    <None Include="Resources\greentable.jpg" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\images2.png" />
+    <None Include="Resources\Apps-system-software-update-icon.png" />
+    <None Include="Resources\refresh-icon.png" />
+    <None Include="Resources\belfe1.jpg" />
+    <None Include="Resources\burger.png" />
+    <None Include="Resources\cheesecake.jpg" />
+    <None Include="Resources\chocoball1.jpg" />
+    <None Include="Resources\coce1.jpg" />
+    <None Include="Resources\diplomatias1.jpg" />
+    <None Include="Resources\euro.png" />
+    <None Include="Resources\Euro1.png" />
+    <None Include="Resources\jin1.jpg" />
+    <None Include="Resources\jonnie1.jpg" />
+    <None Include="Resources\kotopoulo.jpeg" />
+    <None Include="Resources\lamp.jpg" />
+    <None Include="Resources\mana.jpg" />
+    <None Include="Resources\milfake.jpeg" />
+    <None Include="Resources\order2.png" />
+    <None Include="Resources\patates.jpg" />
+    <None Include="Resources\patates1.jpg" />
+    <None Include="Resources\rwhine1.jpg" />
+    <None Include="Resources\seafood1.jpg" />
+    <None Include="Resources\sprite1.jpg" />
+    <None Include="Resources\tiraki.jpg" />
+    <None Include="Resources\water1.jpg" />
+    <None Include="Resources\wwhine1.jpg" />
+    <None Include="Resources\party poppers.jpg" />
+    <None Include="Resources\chefsalad.jpg" />
+    <None Include="Resources\coleslawsalad.jpg" />
+    <None Include="Resources\currysalad.jpg" />
+    <None Include="Resources\greensalad.jpg" />
     <Content Include="Resources\^AAE851C2876E4A968CB402138366A77A2D3D0446854C20C923^pimgpsh_fullsize_distr.png" />
     <Content Include="Resources\^B30A33B3F310F5203A93CD135AC3732367BC7355D0F90C89B8^pimgpsh_fullsize_distr.png" />
   </ItemGroup>

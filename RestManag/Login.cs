@@ -13,16 +13,7 @@ using System.Data.OleDb;
 namespace RestManag
 {
     public partial class Login : Form
-    {
-        private OleDbConnection con;
-        private String cmd;
-        private OleDbDataAdapter da,da1;
-        private DataTable dt,dt1;
-        
-        
- 
-
-
+    {   
         public Login()
         {
             InitializeComponent();
