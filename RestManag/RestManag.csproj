@@ -95,11 +95,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Waiter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +118,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="CorrectDatabaseDataSet.xsc">
@@ -177,6 +171,8 @@
     <None Include="Resources\coce1.jpg" />
     <Content Include="Resources\diplomatias.jpg" />
     <None Include="Resources\jin1.jpg" />
+    <None Include="Resources\euro.png" />
+    <None Include="Resources\Euro1.png" />
     <Content Include="Resources\jonnie.jpg" />
     <Content Include="Resources\kotopoulo.jpeg" />
     <Content Include="Resources\lamp.jpg" />

@@ -219,6 +219,7 @@ namespace RestManag
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
+            
             //listbox must to be group 
             if (tabControl1.SelectedIndex == 1)
             {
@@ -241,14 +242,26 @@ namespace RestManag
             {
                 DataTable t = productTableAdapter.GetDataBy(listBox4.Text);
                 dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
-
+             
 
             }
-           
-           
+            Double sum1 = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                sum1 += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
+            }
+            label3.Text = sum1.ToString();
+            sumcost.Text = sum1.ToString();
+
         }
 
-
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+            }
+        }
     }
     }
         

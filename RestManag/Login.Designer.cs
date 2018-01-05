@@ -82,7 +82,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::RestManag.Properties.Resources._3BE0800188BB83BD4D39F91CDC0115933667C30FC0333D8E5D_pimgpsh_fullsize_distr;
+           
             this.pictureBox1.Location = new System.Drawing.Point(144, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(21, 20);
@@ -92,7 +92,7 @@
             // clearbutton
             // 
             this.clearbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.clearbutton.Image = global::RestManag.Properties.Resources._776022FAF85955B3DCA4CF1E576C106697D03916556D9FE294_pimgpsh_fullsize_distr;
+          
             this.clearbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clearbutton.Location = new System.Drawing.Point(171, 165);
             this.clearbutton.Name = "clearbutton";
@@ -104,7 +104,7 @@
             // Loginbutton
             // 
             this.Loginbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Loginbutton.Image = global::RestManag.Properties.Resources._E2044651974571362A01E7FB777DE9A7886909B0A98A6D6AB2_pimgpsh_fullsize_distr;
+            
             this.Loginbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Loginbutton.Location = new System.Drawing.Point(258, 165);
             this.Loginbutton.Name = "Loginbutton";
@@ -117,7 +117,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::RestManag.Properties.Resources._2B601CF12D3B1EC04D7B52FC07D06490A340B45C85BB83F735_pimgpsh_fullsize_distr1;
+            
             this.pictureBox2.Location = new System.Drawing.Point(144, 97);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(20, 20);
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RestManag.Properties.Resources.original_014_matteo_rizzo_funghi_porcini_timo;
+            
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(606, 466);
             this.Controls.Add(this.Exitbutton);

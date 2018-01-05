@@ -36,20 +36,23 @@
             this.Tablest = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.drinkst = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.appetizert = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.maindishest = new System.Windows.Forms.TabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.dessertt = new System.Windows.Forms.TabPage();
             this.listBox6 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.paymentt = new System.Windows.Forms.TabPage();
+            this.sumcost = new System.Windows.Forms.Label();
+            this.seat = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Sum = new System.Windows.Forms.Label();
+            this.Tableleb = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.correctDatabaseDataSet = new RestManag.CorrectDatabaseDataSet();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,49 +64,51 @@
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.Remove = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.Removebutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
             this.Logoutw = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.productOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderPaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderPaymentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderPaymentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productOrderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.productBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.pnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Tablest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.drinkst.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.appetizert.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.maindishest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.dessertt.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.paymentt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productOrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productOrderBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -144,7 +149,7 @@
             // 
             this.Tablest.Controls.Add(this.dataGridView2);
             this.Tablest.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tablest.ImageIndex = 2;
+            this.Tablest.ImageIndex = 0;
             this.Tablest.Location = new System.Drawing.Point(4, 31);
             this.Tablest.Name = "Tablest";
             this.Tablest.Padding = new System.Windows.Forms.Padding(3);
@@ -173,14 +178,6 @@
             this.drinkst.Text = "Drinks";
             this.drinkst.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(192, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(190, 312);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -203,14 +200,6 @@
             this.appetizert.Text = "Appetizer";
             this.appetizert.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(217, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(257, 216);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -232,14 +221,6 @@
             this.maindishest.TabIndex = 3;
             this.maindishest.Text = "Main Dishes";
             this.maindishest.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(236, 28);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(326, 253);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
             // 
             // listBox3
             // 
@@ -285,14 +266,6 @@
             this.listBox5.TabIndex = 2;
             this.listBox5.Visible = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(227, 28);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(268, 188);
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
@@ -304,6 +277,13 @@
             // 
             // paymentt
             // 
+            this.paymentt.Controls.Add(this.sumcost);
+            this.paymentt.Controls.Add(this.seat);
+            this.paymentt.Controls.Add(this.button1);
+            this.paymentt.Controls.Add(this.comboBox1);
+            this.paymentt.Controls.Add(this.label2);
+            this.paymentt.Controls.Add(this.Sum);
+            this.paymentt.Controls.Add(this.Tableleb);
             this.paymentt.ImageIndex = 5;
             this.paymentt.Location = new System.Drawing.Point(4, 31);
             this.paymentt.Name = "paymentt";
@@ -312,6 +292,72 @@
             this.paymentt.TabIndex = 5;
             this.paymentt.Text = "Payment";
             this.paymentt.UseVisualStyleBackColor = true;
+            // 
+            // sumcost
+            // 
+            this.sumcost.AutoSize = true;
+            this.sumcost.Location = new System.Drawing.Point(147, 97);
+            this.sumcost.Name = "sumcost";
+            this.sumcost.Size = new System.Drawing.Size(0, 22);
+            this.sumcost.TabIndex = 8;
+            // 
+            // seat
+            // 
+            this.seat.AutoSize = true;
+            this.seat.Location = new System.Drawing.Point(147, 34);
+            this.seat.Name = "seat";
+            this.seat.Size = new System.Drawing.Size(0, 22);
+            this.seat.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(122, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 35);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Commit";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Card",
+            "Cash"});
+            this.comboBox1.Location = new System.Drawing.Point(122, 161);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 30);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label2.Location = new System.Drawing.Point(25, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 26);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Payment ";
+            // 
+            // Sum
+            // 
+            this.Sum.AutoSize = true;
+            this.Sum.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Sum.Location = new System.Drawing.Point(25, 93);
+            this.Sum.Name = "Sum";
+            this.Sum.Size = new System.Drawing.Size(91, 26);
+            this.Sum.TabIndex = 2;
+            this.Sum.Text = "Sum Cost";
+            // 
+            // Tableleb
+            // 
+            this.Tableleb.AutoSize = true;
+            this.Tableleb.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Tableleb.Location = new System.Drawing.Point(59, 31);
+            this.Tableleb.Name = "Tableleb";
+            this.Tableleb.Size = new System.Drawing.Size(57, 26);
+            this.Tableleb.TabIndex = 0;
+            this.Tableleb.Text = "Table";
             // 
             // imageList1
             // 
@@ -377,6 +423,51 @@
             this.productBindingSource1.DataMember = "Product";
             this.productBindingSource1.DataSource = this.correctDatabaseDataSetBindingSource;
             // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataMember = "Product";
+            this.productBindingSource2.DataSource = this.correctDatabaseDataSetBindingSource;
+            // 
+            // productBindingSource3
+            // 
+            this.productBindingSource3.DataMember = "Product";
+            this.productBindingSource3.DataSource = this.correctDatabaseDataSetBindingSource;
+            // 
+            // productBindingSource4
+            // 
+            this.productBindingSource4.DataMember = "Product";
+            this.productBindingSource4.DataSource = this.correctDatabaseDataSetBindingSource;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Location = new System.Drawing.Point(797, 429);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 20);
+            this.label3.TabIndex = 9;
+            // 
+            // Remove
+            // 
+            this.Remove.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            this.Remove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Remove.Location = new System.Drawing.Point(169, 495);
+            this.Remove.Name = "Remove";
+            this.Remove.Size = new System.Drawing.Size(88, 30);
+            this.Remove.TabIndex = 9;
+            this.Remove.Text = "    Remove";
+            this.Remove.UseVisualStyleBackColor = true;
+            this.Remove.Click += new System.EventHandler(this.Remove_Click);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.ImageLocation = "";
@@ -385,18 +476,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(280, 104);
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
-            // 
-            // Removebutton
-            // 
-            this.Removebutton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-           // this.Removebutton.Image = global::RestManag.Properties.Resources._5FC673A9C9288F4AA7262B8164A53743B2AD3CF94BC4C9AEA3_pimgpsh_fullsize_distr;
-            this.Removebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Removebutton.Location = new System.Drawing.Point(163, 496);
-            this.Removebutton.Name = "Removebutton";
-            this.Removebutton.Size = new System.Drawing.Size(98, 30);
-            this.Removebutton.TabIndex = 6;
-            this.Removebutton.Text = "    Remove";
-            this.Removebutton.UseVisualStyleBackColor = true;
             // 
             // Addbutton
             // 
@@ -424,6 +503,38 @@
             this.Logoutw.UseVisualStyleBackColor = true;
             this.Logoutw.Click += new System.EventHandler(this.Logoutw_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(192, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(190, 312);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(217, 28);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(257, 216);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(236, 28);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(326, 253);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(227, 28);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(268, 188);
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            // 
             // productOrderBindingSource
             // 
             this.productOrderBindingSource.DataMember = "ProductOrder";
@@ -449,62 +560,15 @@
             this.productOrderBindingSource1.DataMember = "ProductOrder";
             this.productOrderBindingSource1.DataSource = this.productBindingSource1;
             // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            // 
-            // productBindingSource2
-            // 
-            this.productBindingSource2.DataMember = "Product";
-            this.productBindingSource2.DataSource = this.correctDatabaseDataSetBindingSource;
-            // 
-            // productBindingSource3
-            // 
-            this.productBindingSource3.DataMember = "Product";
-            this.productBindingSource3.DataSource = this.correctDatabaseDataSetBindingSource;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pnameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.productBindingSource4;
-            this.dataGridView3.Location = new System.Drawing.Point(609, 432);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(239, 42);
-            this.dataGridView3.TabIndex = 1;
-            this.dataGridView3.Visible = false;
-            // 
-            // productBindingSource4
-            // 
-            this.productBindingSource4.DataMember = "Product";
-            this.productBindingSource4.DataSource = this.correctDatabaseDataSetBindingSource;
-            // 
-            // pnameDataGridViewTextBoxColumn
-            // 
-            this.pnameDataGridViewTextBoxColumn.DataPropertyName = "Pname";
-            this.pnameDataGridViewTextBoxColumn.HeaderText = "Pname";
-            this.pnameDataGridViewTextBoxColumn.Name = "pnameDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
             // Waiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 537);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Remove);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Removebutton);
             this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.Logoutw);
             this.Controls.Add(this.panel1);
@@ -518,28 +582,29 @@
             this.Tablest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.drinkst.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.appetizert.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.maindishest.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.dessertt.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.paymentt.ResumeLayout(false);
+            this.paymentt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productOrderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productOrderBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,7 +622,6 @@
         private System.Windows.Forms.TabPage paymentt;
         private System.Windows.Forms.Button Logoutw;
         private System.Windows.Forms.Button Addbutton;
-        private System.Windows.Forms.Button Removebutton;
         private System.Windows.Forms.ImageList imageList1;
         private CorrectDatabaseDataSet correctDatabaseDataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
@@ -589,9 +653,15 @@
         private System.Windows.Forms.BindingSource productBindingSource2;
         private System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource4;
+        private System.Windows.Forms.Button Remove;
+        private System.Windows.Forms.Label sumcost;
+        private System.Windows.Forms.Label seat;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Sum;
+        private System.Windows.Forms.Label Tableleb;
+        private System.Windows.Forms.Label label3;
     }
 }
