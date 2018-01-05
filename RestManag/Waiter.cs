@@ -17,64 +17,92 @@ namespace RestManag
             InitializeComponent();
 
             string SQL2 = "SELECT Pname FROM Product WHERE Category ='Drinks'";
+            string SQL3 = "SELECT Pname FROM Product WHERE Category ='Appetizer'";
+            string SQL4 = "SELECT Pname FROM Product WHERE Category ='Main Dish'";
+            string SQL5 = "SELECT Pname FROM Product WHERE Category = 'Sweet'";
+
 
             using (OleDbDataAdapter sda = new OleDbDataAdapter(SQL2, Properties.Settings.Default.CorrectDatabaseConnectionString))
             {
                 DataTable dat = new DataTable();
                 sda.Fill(dat);
-                listBox1.DataSource = dat;
-                listBox1.DisplayMember = "Pname";
-                listBox1.Click += click_do;
+                drinksListBox.DataSource = dat;
+                drinksListBox.DisplayMember = "Pname";
+                drinksListBox.Click += click_do;
+            }
+            using (OleDbDataAdapter sda1 = new OleDbDataAdapter(SQL3, Properties.Settings.Default.CorrectDatabaseConnectionString))
+            {
+                DataTable dat = new DataTable();
+                sda1.Fill(dat);
+                appetizzerListBox.DataSource = dat;
+                appetizzerListBox.DisplayMember = "Pname";
+                appetizzerListBox.Click += click_do;
+            }
+            using (OleDbDataAdapter sda2 = new OleDbDataAdapter(SQL4, Properties.Settings.Default.CorrectDatabaseConnectionString))
+            {
+                DataTable dat = new DataTable();
+                sda2.Fill(dat);
+                mainDishListBox.DataSource = dat;
+                mainDishListBox.DisplayMember = "Pname";
+                mainDishListBox.Click += click_do;
+            }
+            using (OleDbDataAdapter sda3 = new OleDbDataAdapter(SQL5, Properties.Settings.Default.CorrectDatabaseConnectionString))
+            {
+                DataTable dat = new DataTable();
+                sda3.Fill(dat);
+                dessertListBox.DataSource = dat;
+                dessertListBox.DisplayMember = "Pname";
+                dessertListBox.Click += click_do;
             }
         }
 
         private void click_do(object sender, EventArgs e)
         {
-           
-            if (listBox1.Text.Equals("Water"))
+           /*
+            if (drinksListBox.Text.Equals("Water"))
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/water.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
 
             }
-            else if (listBox1.Text.Equals("Coke"))
+            else if (drinksListBox.Text.Equals("Coke"))
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/coce.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }
-            else if (listBox1.Text.Equals("Sprite"))
+            else if (drinksListBox.Text.Equals("Sprite"))
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/sprite.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            }else if (listBox1.Text.Equals("Red Wine"))
+            }else if (drinksListBox.Text.Equals("Red Wine"))
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/rwhine.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            }else if (listBox1.Text.Equals("White Wine"))
+            }else if (drinksListBox.Text.Equals("White Wine"))
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/wwhine.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            }else if (listBox1.Text.Equals("Vodka")) {
+            }else if (drinksListBox.Text.Equals("Vodka")) {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/belfe.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
 
-            }else if (listBox1.Text.Equals("Whiskey"))
+            }else if (drinksListBox.Text.Equals("Whiskey"))
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/jonnie.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            }else if (listBox1.Text.Equals("Gin"))
+            }else if (drinksListBox.Text.Equals("Gin"))
 
             {
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/jin.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }
-            else if(listBox1.Text.Equals("Rum"))
+            else if(drinksListBox.Text.Equals("Rum"))
             {   //rum
                 pictureBox1.Image = Image.FromFile("C:/Users/dafou/Documents/GitHub/RestManag-master/RestManag/Resources/diplomatias.jpg");
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             }
 
-
+            */
         }
             
 
@@ -111,8 +139,49 @@ namespace RestManag
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
+            //listbox must to be group 
+            if (tabControl1.SelectedIndex == 1)
+            {
+                DataTable t = productTableAdapter.GetDataBy(drinksListBox.Text);
+                dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
 
-            dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = listBox1.SelectedItems[0].ToString();
+
+            }
+            else if (tabControl1.SelectedIndex == 2)
+            {
+                DataTable t = productTableAdapter.GetDataBy(appetizzerListBox.Text);
+                dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
+            }
+            else if (tabControl1.SelectedIndex == 3)
+            {
+                DataTable t = productTableAdapter.GetDataBy(mainDishListBox.Text);
+                dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
+            }
+            else if (tabControl1.SelectedIndex == 4)
+            {
+                DataTable t = productTableAdapter.GetDataBy(dessertListBox.Text);
+                dataGridView1.Rows.Add(t.Rows[0]["Pname"].ToString(), t.Rows[0]["Price"].ToString());
+
+
+            }
+            Double sum1 = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                sum1 += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
+            }
+            totalSum.Text = sum1.ToString();
+            costLabel.Text = sum1.ToString();
+            
+
+        }
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+            }
         }
     }
+    //dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = listBox1.SelectedItems[0].ToString();
 }

@@ -153,7 +153,6 @@ namespace RestManag
             String date = dateTimePicker.Value.ToShortDateString();
             DateTime dt2 = Convert.ToDateTime(time + " " + date);
             hoursTableAdapter.DeleteQuery(username, dt2);
-            //hoursBindingSource.RemoveAt(opws);
             hoursTableAdapter.Fill(correctDatabaseDataSet.Hours);
         }
     }
