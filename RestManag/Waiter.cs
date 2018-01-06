@@ -15,7 +15,7 @@ namespace RestManag
         public Waiter()
         {
             InitializeComponent();
-
+            
             string SQL2 = "SELECT Pname FROM Product WHERE Category ='Drinks'";
             string SQL3 = "SELECT Pname FROM Product WHERE Category ='Appetizer'";
             string SQL4 = "SELECT Pname FROM Product WHERE Category ='Main Dish'";
@@ -64,20 +64,10 @@ namespace RestManag
                 listBox1.DisplayMember = "Pname";
                 listBox1.Click += click_do;
             }
-            //this.Kappa();
-            /*if (tabControl1.SelectedTab == Tablest)
-            {
-                Addbutton.Visible = false;
-                Removebutton.Visible = false;
-            }
-            else if (tabControl1.SelectedTab == drinkst || tabControl1.SelectedTab == appetizert || tabControl1.SelectedTab == saladt || tabControl1.SelectedTab == maindishest || tabControl1.SelectedTab ==dessertt || tabControl1.SelectedTab ==paymentt)
-            {
-                Addbutton.Visible = true;
-                Removebutton.Visible = true;
-            }*/
+           
 
         }
-
+        private Double sum1 = 0.0;
         private void click_do(object sender, EventArgs e)
         {
            
@@ -201,14 +191,7 @@ namespace RestManag
                 pictureBox4.Image = RestManag.Properties.Resources.milfake;
                 this.pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
             }
-        }
-            
-
-         //private void Kappa(object sender, PaintEventArgs e)
-         //{
-            
-            
-         //}   
+        } 
         
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -269,23 +252,8 @@ namespace RestManag
 
 
             }
-            Double sum1 = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
-            {
-                sum1 += Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
-            }
-            totalSum.Text = sum1.ToString()+ " €";
-            costLabel.Text = sum1.ToString()+ " €";
-            
 
-        }
-
-        private void Remove_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
-            {
-                dataGridView1.Rows.RemoveAt(item.Index);
-            }
+            this.addCost();
         }
 
         private void plox(object sender, EventArgs e)
@@ -328,5 +296,42 @@ namespace RestManag
                 Removebutton.Visible = true;
             }
         }
+
+        private void Removebutton_Click(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+                this.addCost();
+            }
+        }
+
+        private void addCost()
+        {
+            sum1 = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                sum1 += Convert.ToDouble(dataGridView1.Rows[i].Cells["Price"].Value);
+            }
+            totalSum.Text = sum1.ToString() + " €";
+            costLabel.Text = sum1.ToString() + " €";
+        }
+
+        private void commitButton_Click(object sender, EventArgs e)
+        {
+            String table = tableLabel.Text;
+            String user = Login.username;
+            String comments = richTextBox1.Text;
+            String pname;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                pname = dataGridView1.Rows[i].Cells["Pname"].Value.ToString();
+                DataTable dt=productTableAdapter.GetCode(pname);
+                int pcode = Int32.Parse(dt.Rows[0]["Code"].ToString());
+                orderTableAdapter.InsertOrder(i, pcode, Convert.ToInt32(table), user, DateTime.Now, Convert.ToDecimal(sum1), comments);
+            }
+        }
     }
 }
+

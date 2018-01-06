@@ -17,9 +17,10 @@ namespace RestManag
         public Login()
         {
             InitializeComponent();
+            
         }
-
-      
+        public static String username;
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -34,6 +35,7 @@ namespace RestManag
         private void button1_Click(object sender, EventArgs e)
         {
 
+            username = textBox1.Text;
             if (usersTableAdapter1.checkLogin(textBox1.Text, textBox2.Text, 1).Value==1)
             {
                 this.Hide();

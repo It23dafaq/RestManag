@@ -73,21 +73,23 @@
             this.Pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.correctDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.correctDatabaseDataSet = new RestManag.CorrectDatabaseDataSet();
             this.totalSum = new System.Windows.Forms.Label();
             this.Removebutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
             this.Logoutw = new System.Windows.Forms.Button();
             this.productOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderPaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderPaymentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderPaymentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.correctDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.correctDatabaseDataSet = new RestManag.CorrectDatabaseDataSet();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.ProductTableAdapter();
             this.orderTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.OrderTableAdapter();
             this.paymentTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.PaymentTableAdapter();
             this.tableTableAdapter1 = new RestManag.CorrectDatabaseDataSetTableAdapters.TableTableAdapter();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.commentLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Tablest.SuspendLayout();
@@ -104,13 +106,13 @@
             this.paymentt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productOrderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -524,6 +526,7 @@
             this.commitButton.TabIndex = 6;
             this.commitButton.Text = "Commit";
             this.commitButton.UseVisualStyleBackColor = true;
+            this.commitButton.Click += new System.EventHandler(this.commitButton_Click);
             // 
             // comboBox1
             // 
@@ -597,7 +600,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Pname,
             this.Price});
-            this.dataGridView1.Location = new System.Drawing.Point(605, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(605, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(239, 267);
             this.dataGridView1.TabIndex = 7;
@@ -617,20 +620,10 @@
             this.productBindingSource1.DataMember = "Product";
             this.productBindingSource1.DataSource = this.correctDatabaseDataSetBindingSource;
             // 
-            // correctDatabaseDataSetBindingSource
-            // 
-            this.correctDatabaseDataSetBindingSource.DataSource = this.correctDatabaseDataSet;
-            this.correctDatabaseDataSetBindingSource.Position = 0;
-            // 
-            // correctDatabaseDataSet
-            // 
-            this.correctDatabaseDataSet.DataSetName = "CorrectDatabaseDataSet";
-            this.correctDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // totalSum
             // 
             this.totalSum.AutoSize = true;
-            this.totalSum.Location = new System.Drawing.Point(762, 339);
+            this.totalSum.Location = new System.Drawing.Point(816, 302);
             this.totalSum.Name = "totalSum";
             this.totalSum.Size = new System.Drawing.Size(0, 13);
             this.totalSum.TabIndex = 8;
@@ -646,6 +639,7 @@
             this.Removebutton.TabIndex = 6;
             this.Removebutton.Text = "    Remove";
             this.Removebutton.UseVisualStyleBackColor = true;
+            this.Removebutton.Click += new System.EventHandler(this.Removebutton_Click);
             // 
             // Addbutton
             // 
@@ -678,11 +672,6 @@
             this.productOrderBindingSource.DataMember = "ProductOrder";
             this.productOrderBindingSource.DataSource = this.productBindingSource;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.correctDatabaseDataSet;
-            // 
             // orderPaymentBindingSource
             // 
             this.orderPaymentBindingSource.DataMember = "OrderPayment";
@@ -697,6 +686,21 @@
             // 
             this.orderPaymentBindingSource2.DataMember = "OrderPayment";
             this.orderPaymentBindingSource2.DataSource = this.productOrderBindingSource;
+            // 
+            // correctDatabaseDataSetBindingSource
+            // 
+            this.correctDatabaseDataSetBindingSource.DataSource = this.correctDatabaseDataSet;
+            this.correctDatabaseDataSetBindingSource.Position = 0;
+            // 
+            // correctDatabaseDataSet
+            // 
+            this.correctDatabaseDataSet.DataSetName = "CorrectDatabaseDataSet";
+            this.correctDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.correctDatabaseDataSet;
             // 
             // productTableAdapter
             // 
@@ -714,11 +718,30 @@
             // 
             this.tableTableAdapter1.ClearBeforeFill = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(605, 355);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(239, 114);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
+            // commentLabel
+            // 
+            this.commentLabel.AutoSize = true;
+            this.commentLabel.Location = new System.Drawing.Point(605, 339);
+            this.commentLabel.Name = "commentLabel";
+            this.commentLabel.Size = new System.Drawing.Size(56, 13);
+            this.commentLabel.TabIndex = 10;
+            this.commentLabel.Text = "Comments";
+            // 
             // Waiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 537);
+            this.Controls.Add(this.commentLabel);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.totalSum);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Removebutton);
@@ -747,13 +770,13 @@
             this.paymentt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productOrderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPaymentBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.correctDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,5 +841,7 @@
         private System.Windows.Forms.Button t2;
         private System.Windows.Forms.Button t1;
         private CorrectDatabaseDataSetTableAdapters.TableTableAdapter tableTableAdapter1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label commentLabel;
     }
 }

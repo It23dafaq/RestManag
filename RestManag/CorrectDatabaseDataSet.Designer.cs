@@ -1006,9 +1006,10 @@ namespace RestManag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public OrderRow FindByCode(int Code) {
+            public OrderRow FindByCodeOrderDate(int Code, System.DateTime OrderDate) {
                 return ((OrderRow)(this.Rows.Find(new object[] {
-                            Code})));
+                            Code,
+                            OrderDate})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1054,11 +1055,12 @@ namespace RestManag {
                 base.Columns.Add(this.columnTotal);
                 this.columnComments = new global::System.Data.DataColumn("Comments", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComments);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCode}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("OrderKey1", new global::System.Data.DataColumn[] {
+                                this.columnCode,
+                                this.columnOrderDate}, true));
                 this.columnCode.AllowDBNull = false;
-                this.columnCode.Unique = true;
                 this.columnUsername.MaxLength = 255;
+                this.columnOrderDate.AllowDBNull = false;
                 this.columnComments.MaxLength = 255;
             }
             
@@ -2807,12 +2809,7 @@ namespace RestManag {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime OrderDate {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableOrder.OrderDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OrderDate\' in table \'Order\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableOrder.OrderDateColumn]));
                 }
                 set {
                     this[this.tableOrder.OrderDateColumn] = value;
@@ -2918,18 +2915,6 @@ namespace RestManag {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetUsernameNull() {
                 this[this.tableOrder.UsernameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsOrderDateNull() {
-                return this.IsNull(this.tableOrder.OrderDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetOrderDateNull() {
-                this[this.tableOrder.OrderDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4648,7 +4633,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
+        public virtual int Delete(global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, System.DateTime Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
             if ((Original_Code.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Code.Value));
             }
@@ -4679,14 +4664,8 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Username));
             }
-            if ((Original_OrderDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_OrderDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_OrderDate));
             if ((Original_Total.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Total.Value));
@@ -4723,7 +4702,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<decimal> Total, string Comments) {
+        public virtual int Insert(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, System.DateTime OrderDate, global::System.Nullable<decimal> Total, string Comments) {
             if ((Code.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Code.Value));
             }
@@ -4748,12 +4727,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Username));
             }
-            if ((OrderDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(OrderDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(OrderDate));
             if ((Total.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(Total.Value));
             }
@@ -4786,7 +4760,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
+        public virtual int Update(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, System.DateTime OrderDate, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, System.DateTime Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
             if ((Code.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Code.Value));
             }
@@ -4811,12 +4785,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Username));
             }
-            if ((OrderDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(OrderDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(OrderDate));
             if ((Total.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Total.Value));
             }
@@ -4859,14 +4828,8 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Username));
             }
-            if ((Original_OrderDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_OrderDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_OrderDate));
             if ((Original_Total.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_Total.Value));
@@ -4903,15 +4866,15 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
-            return this.Update(Original_Code, Pcode, Tcode, Username, OrderDate, Total, Comments, Original_Code, Original_Pcode, Original_Tcode, Original_Username, Original_OrderDate, Original_Total, Original_Comments);
+        public virtual int Update(global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, System.DateTime Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
+            return this.Update(Original_Code, Pcode, Tcode, Username, Original_OrderDate, Total, Comments, Original_Code, Original_Pcode, Original_Tcode, Original_Username, Original_OrderDate, Original_Total, Original_Comments);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertOrder(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<decimal> Total, string Comments) {
+        public virtual int InsertOrder(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, System.DateTime OrderDate, global::System.Nullable<decimal> Total, string Comments) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
             if ((Code.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(Code.Value));
@@ -4937,12 +4900,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
             else {
                 command.Parameters[3].Value = ((string)(Username));
             }
-            if ((OrderDate.HasValue == true)) {
-                command.Parameters[4].Value = ((System.DateTime)(OrderDate.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[4].Value = ((System.DateTime)(OrderDate));
             if ((Total.HasValue == true)) {
                 command.Parameters[5].Value = ((decimal)(Total.Value));
             }
@@ -5903,7 +5861,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Code, Pname, Category, Price FROM Product";
@@ -5917,6 +5875,11 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
             this._commandCollection[2].CommandText = "SELECT       *\r\nFROM            Product\r\nWHERE        (Pname = ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Pname", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Pname", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT Code FROM [Product] WHERE Pname=?";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Pname", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Pname", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5992,6 +5955,42 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual CorrectDatabaseDataSet.ProductDataTable GetDataBy(string Pname) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Pname == null)) {
+                throw new global::System.ArgumentNullException("Pname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Pname));
+            }
+            CorrectDatabaseDataSet.ProductDataTable dataTable = new CorrectDatabaseDataSet.ProductDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillCode(CorrectDatabaseDataSet.ProductDataTable dataTable, string Pname) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Pname == null)) {
+                throw new global::System.ArgumentNullException("Pname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Pname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual CorrectDatabaseDataSet.ProductDataTable GetCode(string Pname) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Pname == null)) {
                 throw new global::System.ArgumentNullException("Pname");
             }
@@ -6803,7 +6802,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Username, [Password], FirstName, LastName, Category FROM Users";
@@ -6821,6 +6820,12 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
             this._commandCollection[2].CommandText = "SELECT COUNT(*) FROM [Users] WHERE Username=?";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        Username\r\nFROM            Users\r\nWHERE        (Username = ?) AND (C" +
+                "ategory = 0)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6842,6 +6847,42 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual CorrectDatabaseDataSet.UsersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            CorrectDatabaseDataSet.UsersDataTable dataTable = new CorrectDatabaseDataSet.UsersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillUsername(CorrectDatabaseDataSet.UsersDataTable dataTable, string Username) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Username == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Username));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual CorrectDatabaseDataSet.UsersDataTable GetUsername(string Username) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Username == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Username));
+            }
             CorrectDatabaseDataSet.UsersDataTable dataTable = new CorrectDatabaseDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
