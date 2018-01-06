@@ -337,9 +337,9 @@ namespace RestManag
                     randomNumber = random.Next(0, 1000000000);
                 }
             }
-            else {
-                //randomNumber = random.Next(0, 1000000000);
-            }
+            this.Hide();
+            Waiter w = new Waiter();
+            w.Show();
         }
     }
 }
