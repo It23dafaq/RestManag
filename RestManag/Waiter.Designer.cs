@@ -34,6 +34,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Tablest = new System.Windows.Forms.TabPage();
+            this.t10 = new System.Windows.Forms.Button();
+            this.t8 = new System.Windows.Forms.Button();
+            this.t11 = new System.Windows.Forms.Button();
+            this.t3 = new System.Windows.Forms.Button();
+            this.t9 = new System.Windows.Forms.Button();
+            this.t5 = new System.Windows.Forms.Button();
+            this.t4 = new System.Windows.Forms.Button();
+            this.t7 = new System.Windows.Forms.Button();
+            this.t6 = new System.Windows.Forms.Button();
+            this.t2 = new System.Windows.Forms.Button();
+            this.t1 = new System.Windows.Forms.Button();
             this.drinkst = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.drinksListBox = new System.Windows.Forms.ListBox();
@@ -76,17 +87,6 @@
             this.productTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.ProductTableAdapter();
             this.orderTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.OrderTableAdapter();
             this.paymentTableAdapter = new RestManag.CorrectDatabaseDataSetTableAdapters.PaymentTableAdapter();
-            this.t10 = new System.Windows.Forms.Button();
-            this.t8 = new System.Windows.Forms.Button();
-            this.t11 = new System.Windows.Forms.Button();
-            this.t3 = new System.Windows.Forms.Button();
-            this.t9 = new System.Windows.Forms.Button();
-            this.t5 = new System.Windows.Forms.Button();
-            this.t4 = new System.Windows.Forms.Button();
-            this.t7 = new System.Windows.Forms.Button();
-            this.t6 = new System.Windows.Forms.Button();
-            this.t2 = new System.Windows.Forms.Button();
-            this.t1 = new System.Windows.Forms.Button();
             this.tableTableAdapter1 = new RestManag.CorrectDatabaseDataSetTableAdapters.TableTableAdapter();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -147,6 +147,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(599, 473);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // Tablest
             // 
@@ -170,6 +171,182 @@
             this.Tablest.TabIndex = 0;
             this.Tablest.Text = "Tables";
             this.Tablest.UseVisualStyleBackColor = true;
+            // 
+            // t10
+            // 
+            this.t10.FlatAppearance.BorderSize = 0;
+            this.t10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t10.Image = global::RestManag.Properties.Resources.images;
+            this.t10.Location = new System.Drawing.Point(161, 305);
+            this.t10.Name = "t10";
+            this.t10.Size = new System.Drawing.Size(69, 64);
+            this.t10.TabIndex = 22;
+            this.t10.Tag = "green";
+            this.t10.Text = "10";
+            this.t10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t10.UseVisualStyleBackColor = true;
+            this.t10.Click += new System.EventHandler(this.plox);
+            this.t10.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t8
+            // 
+            this.t8.FlatAppearance.BorderSize = 0;
+            this.t8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t8.Image = global::RestManag.Properties.Resources.images;
+            this.t8.Location = new System.Drawing.Point(508, 193);
+            this.t8.Name = "t8";
+            this.t8.Size = new System.Drawing.Size(69, 64);
+            this.t8.TabIndex = 21;
+            this.t8.Tag = "green";
+            this.t8.Text = "8";
+            this.t8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t8.UseVisualStyleBackColor = true;
+            this.t8.Click += new System.EventHandler(this.plox);
+            this.t8.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t11
+            // 
+            this.t11.FlatAppearance.BorderSize = 0;
+            this.t11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t11.Image = global::RestManag.Properties.Resources.images;
+            this.t11.Location = new System.Drawing.Point(337, 305);
+            this.t11.Name = "t11";
+            this.t11.Size = new System.Drawing.Size(69, 64);
+            this.t11.TabIndex = 20;
+            this.t11.Tag = "green";
+            this.t11.Text = "11";
+            this.t11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t11.UseVisualStyleBackColor = true;
+            this.t11.Click += new System.EventHandler(this.plox);
+            this.t11.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t3
+            // 
+            this.t3.FlatAppearance.BorderSize = 0;
+            this.t3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t3.Image = global::RestManag.Properties.Resources.images;
+            this.t3.Location = new System.Drawing.Point(337, 70);
+            this.t3.Name = "t3";
+            this.t3.Size = new System.Drawing.Size(69, 64);
+            this.t3.TabIndex = 19;
+            this.t3.Tag = "green";
+            this.t3.Text = "3";
+            this.t3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t3.UseVisualStyleBackColor = true;
+            this.t3.Click += new System.EventHandler(this.plox);
+            this.t3.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t9
+            // 
+            this.t9.FlatAppearance.BorderSize = 0;
+            this.t9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t9.Image = global::RestManag.Properties.Resources.images;
+            this.t9.Location = new System.Drawing.Point(14, 305);
+            this.t9.Name = "t9";
+            this.t9.Size = new System.Drawing.Size(69, 64);
+            this.t9.TabIndex = 18;
+            this.t9.Tag = "green";
+            this.t9.Text = "9";
+            this.t9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t9.UseVisualStyleBackColor = true;
+            this.t9.Click += new System.EventHandler(this.plox);
+            this.t9.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t5
+            // 
+            this.t5.FlatAppearance.BorderSize = 0;
+            this.t5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t5.Image = global::RestManag.Properties.Resources.images;
+            this.t5.Location = new System.Drawing.Point(14, 193);
+            this.t5.Name = "t5";
+            this.t5.Size = new System.Drawing.Size(69, 64);
+            this.t5.TabIndex = 17;
+            this.t5.Tag = "green";
+            this.t5.Text = "5";
+            this.t5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t5.UseVisualStyleBackColor = true;
+            this.t5.Click += new System.EventHandler(this.plox);
+            this.t5.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t4
+            // 
+            this.t4.FlatAppearance.BorderSize = 0;
+            this.t4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t4.Image = global::RestManag.Properties.Resources.images;
+            this.t4.Location = new System.Drawing.Point(508, 70);
+            this.t4.Name = "t4";
+            this.t4.Size = new System.Drawing.Size(69, 64);
+            this.t4.TabIndex = 16;
+            this.t4.Tag = "green";
+            this.t4.Text = "4";
+            this.t4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t4.UseVisualStyleBackColor = true;
+            this.t4.Click += new System.EventHandler(this.plox);
+            this.t4.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t7
+            // 
+            this.t7.FlatAppearance.BorderSize = 0;
+            this.t7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t7.Image = global::RestManag.Properties.Resources.images;
+            this.t7.Location = new System.Drawing.Point(337, 193);
+            this.t7.Name = "t7";
+            this.t7.Size = new System.Drawing.Size(69, 64);
+            this.t7.TabIndex = 15;
+            this.t7.Tag = "green";
+            this.t7.Text = "7";
+            this.t7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t7.UseVisualStyleBackColor = true;
+            this.t7.Click += new System.EventHandler(this.plox);
+            this.t7.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t6
+            // 
+            this.t6.FlatAppearance.BorderSize = 0;
+            this.t6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t6.Image = global::RestManag.Properties.Resources.images;
+            this.t6.Location = new System.Drawing.Point(161, 193);
+            this.t6.Name = "t6";
+            this.t6.Size = new System.Drawing.Size(69, 64);
+            this.t6.TabIndex = 14;
+            this.t6.Tag = "green";
+            this.t6.Text = "6";
+            this.t6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t6.UseVisualStyleBackColor = true;
+            this.t6.Click += new System.EventHandler(this.plox);
+            this.t6.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t2
+            // 
+            this.t2.FlatAppearance.BorderSize = 0;
+            this.t2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t2.Image = global::RestManag.Properties.Resources.images;
+            this.t2.Location = new System.Drawing.Point(161, 70);
+            this.t2.Name = "t2";
+            this.t2.Size = new System.Drawing.Size(69, 64);
+            this.t2.TabIndex = 13;
+            this.t2.Tag = "green";
+            this.t2.Text = "2";
+            this.t2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t2.UseVisualStyleBackColor = true;
+            this.t2.Click += new System.EventHandler(this.plox);
+            this.t2.MouseHover += new System.EventHandler(this.trapezia);
+            // 
+            // t1
+            // 
+            this.t1.FlatAppearance.BorderSize = 0;
+            this.t1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.t1.Image = global::RestManag.Properties.Resources.images;
+            this.t1.Location = new System.Drawing.Point(14, 70);
+            this.t1.Name = "t1";
+            this.t1.Size = new System.Drawing.Size(69, 64);
+            this.t1.TabIndex = 12;
+            this.t1.Tag = "green";
+            this.t1.Text = "1";
+            this.t1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.t1.UseVisualStyleBackColor = true;
+            this.t1.Click += new System.EventHandler(this.plox);
+            this.t1.MouseHover += new System.EventHandler(this.trapezia);
             // 
             // drinkst
             // 
@@ -532,182 +709,6 @@
             // paymentTableAdapter
             // 
             this.paymentTableAdapter.ClearBeforeFill = true;
-            // 
-            // t10
-            // 
-            this.t10.FlatAppearance.BorderSize = 0;
-            this.t10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t10.Image = global::RestManag.Properties.Resources.images;
-            this.t10.Location = new System.Drawing.Point(161, 305);
-            this.t10.Name = "t10";
-            this.t10.Size = new System.Drawing.Size(69, 64);
-            this.t10.TabIndex = 22;
-            this.t10.Tag = "green";
-            this.t10.Text = "10";
-            this.t10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t10.UseVisualStyleBackColor = true;
-            this.t10.Click += new System.EventHandler(this.plox);
-            this.t10.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t8
-            // 
-            this.t8.FlatAppearance.BorderSize = 0;
-            this.t8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t8.Image = global::RestManag.Properties.Resources.images;
-            this.t8.Location = new System.Drawing.Point(508, 193);
-            this.t8.Name = "t8";
-            this.t8.Size = new System.Drawing.Size(69, 64);
-            this.t8.TabIndex = 21;
-            this.t8.Tag = "green";
-            this.t8.Text = "8";
-            this.t8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t8.UseVisualStyleBackColor = true;
-            this.t8.Click += new System.EventHandler(this.plox);
-            this.t8.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t11
-            // 
-            this.t11.FlatAppearance.BorderSize = 0;
-            this.t11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t11.Image = global::RestManag.Properties.Resources.images;
-            this.t11.Location = new System.Drawing.Point(337, 305);
-            this.t11.Name = "t11";
-            this.t11.Size = new System.Drawing.Size(69, 64);
-            this.t11.TabIndex = 20;
-            this.t11.Tag = "green";
-            this.t11.Text = "11";
-            this.t11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t11.UseVisualStyleBackColor = true;
-            this.t11.Click += new System.EventHandler(this.plox);
-            this.t11.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t3
-            // 
-            this.t3.FlatAppearance.BorderSize = 0;
-            this.t3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t3.Image = global::RestManag.Properties.Resources.images;
-            this.t3.Location = new System.Drawing.Point(337, 70);
-            this.t3.Name = "t3";
-            this.t3.Size = new System.Drawing.Size(69, 64);
-            this.t3.TabIndex = 19;
-            this.t3.Tag = "green";
-            this.t3.Text = "3";
-            this.t3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t3.UseVisualStyleBackColor = true;
-            this.t3.Click += new System.EventHandler(this.plox);
-            this.t3.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t9
-            // 
-            this.t9.FlatAppearance.BorderSize = 0;
-            this.t9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t9.Image = global::RestManag.Properties.Resources.images;
-            this.t9.Location = new System.Drawing.Point(14, 305);
-            this.t9.Name = "t9";
-            this.t9.Size = new System.Drawing.Size(69, 64);
-            this.t9.TabIndex = 18;
-            this.t9.Tag = "green";
-            this.t9.Text = "9";
-            this.t9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t9.UseVisualStyleBackColor = true;
-            this.t9.Click += new System.EventHandler(this.plox);
-            this.t9.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t5
-            // 
-            this.t5.FlatAppearance.BorderSize = 0;
-            this.t5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t5.Image = global::RestManag.Properties.Resources.images;
-            this.t5.Location = new System.Drawing.Point(14, 193);
-            this.t5.Name = "t5";
-            this.t5.Size = new System.Drawing.Size(69, 64);
-            this.t5.TabIndex = 17;
-            this.t5.Tag = "green";
-            this.t5.Text = "5";
-            this.t5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t5.UseVisualStyleBackColor = true;
-            this.t5.Click += new System.EventHandler(this.plox);
-            this.t5.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t4
-            // 
-            this.t4.FlatAppearance.BorderSize = 0;
-            this.t4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t4.Image = global::RestManag.Properties.Resources.images;
-            this.t4.Location = new System.Drawing.Point(508, 70);
-            this.t4.Name = "t4";
-            this.t4.Size = new System.Drawing.Size(69, 64);
-            this.t4.TabIndex = 16;
-            this.t4.Tag = "green";
-            this.t4.Text = "4";
-            this.t4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t4.UseVisualStyleBackColor = true;
-            this.t4.Click += new System.EventHandler(this.plox);
-            this.t4.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t7
-            // 
-            this.t7.FlatAppearance.BorderSize = 0;
-            this.t7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t7.Image = global::RestManag.Properties.Resources.images;
-            this.t7.Location = new System.Drawing.Point(337, 193);
-            this.t7.Name = "t7";
-            this.t7.Size = new System.Drawing.Size(69, 64);
-            this.t7.TabIndex = 15;
-            this.t7.Tag = "green";
-            this.t7.Text = "7";
-            this.t7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t7.UseVisualStyleBackColor = true;
-            this.t7.Click += new System.EventHandler(this.plox);
-            this.t7.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t6
-            // 
-            this.t6.FlatAppearance.BorderSize = 0;
-            this.t6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t6.Image = global::RestManag.Properties.Resources.images;
-            this.t6.Location = new System.Drawing.Point(161, 193);
-            this.t6.Name = "t6";
-            this.t6.Size = new System.Drawing.Size(69, 64);
-            this.t6.TabIndex = 14;
-            this.t6.Tag = "green";
-            this.t6.Text = "6";
-            this.t6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t6.UseVisualStyleBackColor = true;
-            this.t6.Click += new System.EventHandler(this.plox);
-            this.t6.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t2
-            // 
-            this.t2.FlatAppearance.BorderSize = 0;
-            this.t2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t2.Image = global::RestManag.Properties.Resources.images;
-            this.t2.Location = new System.Drawing.Point(161, 70);
-            this.t2.Name = "t2";
-            this.t2.Size = new System.Drawing.Size(69, 64);
-            this.t2.TabIndex = 13;
-            this.t2.Tag = "green";
-            this.t2.Text = "2";
-            this.t2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t2.UseVisualStyleBackColor = true;
-            this.t2.Click += new System.EventHandler(this.plox);
-            this.t2.MouseHover += new System.EventHandler(this.trapezia);
-            // 
-            // t1
-            // 
-            this.t1.FlatAppearance.BorderSize = 0;
-            this.t1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.t1.Image = global::RestManag.Properties.Resources.images;
-            this.t1.Location = new System.Drawing.Point(14, 70);
-            this.t1.Name = "t1";
-            this.t1.Size = new System.Drawing.Size(69, 64);
-            this.t1.TabIndex = 12;
-            this.t1.Tag = "green";
-            this.t1.Text = "1";
-            this.t1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.t1.UseVisualStyleBackColor = true;
-            this.t1.Click += new System.EventHandler(this.plox);
-            this.t1.MouseHover += new System.EventHandler(this.trapezia);
             // 
             // tableTableAdapter1
             // 

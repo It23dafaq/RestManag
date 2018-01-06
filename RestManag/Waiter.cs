@@ -21,8 +21,9 @@ namespace RestManag
             string SQL4 = "SELECT Pname FROM Product WHERE Category ='Main Dish'";
             string SQL5 = "SELECT Pname FROM Product WHERE Category = 'Sweet'";
             string SQL6 = "SELECT Pname FROM Product WHERE Category='Salad'";
-            
 
+            Addbutton.Visible = false;
+            Removebutton.Visible = false;
             using (OleDbDataAdapter sda = new OleDbDataAdapter(SQL2, Properties.Settings.Default.CorrectDatabaseConnectionString))
             {
                 DataTable dat = new DataTable();
@@ -311,6 +312,21 @@ namespace RestManag
             String s = dt.Rows[0]["Seats"].ToString();
             ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
             toolTip1.SetToolTip(b, "seats: " + s);
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                Addbutton.Visible = false;
+                Removebutton.Visible = false;
+            }
+            else
+            {
+
+                Addbutton.Visible = true;
+                Removebutton.Visible = true;
+            }
         }
     }
 }
