@@ -324,12 +324,21 @@ namespace RestManag
             String user = Login.username;
             String comments = richTextBox1.Text;
             String pname;
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            Random random = new Random();
+            int randomNumber = random.Next(0, 1000000000);
+            if (orderTableAdapter.checkCode(randomNumber).Value == 0)
             {
-                pname = dataGridView1.Rows[i].Cells["Pname"].Value.ToString();
-                DataTable dt=productTableAdapter.GetCode(pname);
-                int pcode = Int32.Parse(dt.Rows[0]["Code"].ToString());
-                orderTableAdapter.InsertOrder(i, pcode, Convert.ToInt32(table), user, DateTime.Now, Convert.ToDecimal(sum1), comments);
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    pname = dataGridView1.Rows[i].Cells["Pname"].Value.ToString();
+                    DataTable dt = productTableAdapter.GetCode(pname);
+                    int pcode = Int32.Parse(dt.Rows[0]["Code"].ToString());
+                    orderTableAdapter.InsertOrder(randomNumber, pcode, Convert.ToInt32(table), user, DateTime.Now, Convert.ToDecimal(sum1), comments);
+                    randomNumber = random.Next(0, 1000000000);
+                }
+            }
+            else {
+                //randomNumber = random.Next(0, 1000000000);
             }
         }
     }

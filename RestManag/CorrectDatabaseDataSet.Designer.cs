@@ -1006,10 +1006,9 @@ namespace RestManag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public OrderRow FindByCodeOrderDate(int Code, System.DateTime OrderDate) {
+            public OrderRow FindByCode(int Code) {
                 return ((OrderRow)(this.Rows.Find(new object[] {
-                            Code,
-                            OrderDate})));
+                            Code})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1056,9 +1055,9 @@ namespace RestManag {
                 this.columnComments = new global::System.Data.DataColumn("Comments", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComments);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("OrderKey1", new global::System.Data.DataColumn[] {
-                                this.columnCode,
-                                this.columnOrderDate}, true));
+                                this.columnCode}, true));
                 this.columnCode.AllowDBNull = false;
+                this.columnCode.Unique = true;
                 this.columnUsername.MaxLength = 255;
                 this.columnOrderDate.AllowDBNull = false;
                 this.columnComments.MaxLength = 255;
@@ -4557,23 +4556,28 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Code, Pcode, Tcode, Username, OrderDate, Total, Comments FROM [Order]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO `Order` (`Code`, `Pcode`, `Tcode`, `Username`, `OrderDate`, `Total`, " +
-                "`Comments`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            this._commandCollection[1].CommandText = "SELECT COUNT(*) FROM [Order] WHERE Code=?";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Pcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Pcode", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tcode", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderDate", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Total", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "Total", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Comments", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comments", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO `Order` (`Code`, `Pcode`, `Tcode`, `Username`, `OrderDate`, `Total`, " +
+                "`Comments`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Pcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Pcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tcode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tcode", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Total", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "Total", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Comments", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comments", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4866,8 +4870,42 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, System.DateTime Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
-            return this.Update(Original_Code, Pcode, Tcode, Username, Original_OrderDate, Total, Comments, Original_Code, Original_Pcode, Original_Tcode, Original_Username, Original_OrderDate, Original_Total, Original_Comments);
+        public virtual int Update(global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, System.DateTime OrderDate, global::System.Nullable<decimal> Total, string Comments, global::System.Nullable<int> Original_Code, global::System.Nullable<int> Original_Pcode, global::System.Nullable<int> Original_Tcode, string Original_Username, System.DateTime Original_OrderDate, global::System.Nullable<decimal> Original_Total, string Original_Comments) {
+            return this.Update(Original_Code, Pcode, Tcode, Username, OrderDate, Total, Comments, Original_Code, Original_Pcode, Original_Tcode, Original_Username, Original_OrderDate, Original_Total, Original_Comments);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> checkCode(global::System.Nullable<int> Code) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((Code.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(Code.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4875,7 +4913,7 @@ namespace RestManag.CorrectDatabaseDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertOrder(global::System.Nullable<int> Code, global::System.Nullable<int> Pcode, global::System.Nullable<int> Tcode, string Username, System.DateTime OrderDate, global::System.Nullable<decimal> Total, string Comments) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
             if ((Code.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(Code.Value));
             }
